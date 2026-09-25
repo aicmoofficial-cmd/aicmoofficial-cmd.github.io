@@ -1,0 +1,61 @@
+---
+import Legal from '../layouts/Legal.astro';
+import { SITE, url } from '../lib/site';
+---
+
+<Legal title="Terms of service" description="The terms that apply when you use AICMO." updated="26 September 2026">
+  <p>
+    These terms are an agreement between you and {SITE.legalName} ("AICMO", "we") for your use of the AICMO website and app. By creating an account you accept them. If you use AICMO for a company, you confirm you can accept these terms for it.
+  </p>
+
+  <h2>The service</h2>
+  <p>
+    AICMO helps you plan, write, design, schedule and publish marketing content and see how it performs. Features may change as we improve the product. We will tell you in advance before removing anything important you pay for.
+  </p>
+
+  <h2>Your account</h2>
+  <ul>
+    <li>Keep your sign-in details safe; you are responsible for activity in your account.</li>
+    <li>Give us accurate information, and only connect channels and stores you are allowed to manage.</li>
+  </ul>
+
+  <h2>Your content and approvals</h2>
+  <ul>
+    <li>You own the content you give us and the content AICMO creates for you.</li>
+    <li>You give us permission to process your content only to run the service for you (for example, to write posts and publish them to your channels).</li>
+    <li><strong>You are responsible for what is published.</strong> AI can make mistakes. AICMO includes approval steps and a fact check, but you choose each channel's autonomy level and remain responsible for posts published from your account, including their accuracy and compliance with advertising rules and platform policies.</li>
+  </ul>
+
+  <h2>Acceptable use</h2>
+  <p>Don't use AICMO to publish anything unlawful, deceptive, hateful or infringing; to spam; to impersonate others; or to break the rules of the platforms you publish to. We may suspend accounts that do.</p>
+
+  <h2>Trial, plans and payment</h2>
+  <ul>
+    <li>Paid plans start with a 7-day trial. A card or UPI Autopay mandate is required to start it. Unless you cancel before the trial ends, your plan starts and is charged automatically.</li>
+    <li>Plans renew monthly or yearly until cancelled. Prices are in INR and exclude GST, which is added where applicable. See <a href={url('/pricing')}>pricing</a>.</li>
+    <li>Plans include monthly credits that do not roll over. Purchased top-up credits are valid for 12 months.</li>
+    <li>You can cancel at any time; your plan stays active until the end of the paid period. Payments are non-refundable except where required by law.</li>
+    <li>We may change prices with at least 30 days' notice before your next renewal.</li>
+  </ul>
+
+  <h2>Third-party platforms</h2>
+  <p>
+    Publishing depends on Instagram, Facebook, LinkedIn, X and other platforms. Their rules, limits and outages are outside our control, and they may change or withdraw access to their APIs.
+  </p>
+
+  <h2>Availability and liability</h2>
+  <p>
+    We work hard to keep AICMO running but provide it "as is", without guarantees of uninterrupted service or specific marketing results. To the extent the law allows, our total liability for any claim is limited to the amount you paid us in the three months before it arose, and we are not liable for indirect losses such as lost profits.
+  </p>
+
+  <h2>Ending the agreement</h2>
+  <p>
+    You can stop using AICMO and delete your account at any time. We may suspend or end access if you seriously break these terms. After closure we delete your data as described in our <a href={url('/privacy')}>privacy policy</a>.
+  </p>
+
+  <h2>Law</h2>
+  <p>These terms are governed by the laws of India, and courts in India have jurisdiction.</p>
+
+  <h2>Contact</h2>
+  <p><a href={`mailto:${SITE.contactEmail}`}>{SITE.contactEmail}</a></p>
+</Legal>

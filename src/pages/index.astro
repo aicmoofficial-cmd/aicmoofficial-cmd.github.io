@@ -1,0 +1,402 @@
+---
+import Base from '../layouts/Base.astro';
+import HeroMock from '../components/HeroMock.astro';
+import EarlyAccess from '../components/EarlyAccess.astro';
+import PricingCards from '../components/PricingCards.astro';
+import Faq from '../components/Faq.astro';
+import { CHANNELS, PLANS, SITE, url } from '../lib/site';
+import { FAQ } from '../lib/faq';
+
+const steps = [
+  {
+    n: '01',
+    title: 'Paste your website',
+    body: 'AICMO reads your site and builds your Brand Brain: voice, audience, products, offers and competitors. Shopify stores bring their catalogue and prices along.',
+  },
+  {
+    n: '02',
+    title: 'Get a plan, not a prompt box',
+    body: 'Your AI CMO writes a positioning, content pillars and a weekly cadence for each channel, then fills your calendar with posts that follow them.',
+  },
+  {
+    n: '03',
+    title: 'Approve in one tap',
+    body: 'Every post arrives with its image, the reason it was written and a fact check. Approve, edit or reject from your phone. Or switch a channel to autopilot.',
+  },
+  {
+    n: '04',
+    title: 'It measures, then learns',
+    body: "After posting, AICMO reads likes, comments, shares and reach from each network and feeds your best and weakest posts into next week's plan.",
+  },
+];
+
+const features = [
+  {
+    title: 'Brand Brain',
+    body: 'Your voice, audience, pillars, offers and product facts in one place. Every post is written from it, so nothing sounds generic.',
+    span: 'md:col-span-2',
+    tone: 'violet',
+  },
+  {
+    title: 'Real product photos',
+    body: 'Turns your catalogue into ready-to-post photo cards with name and price. Or generate an image, or upload your own.',
+    tone: 'sky',
+  },
+  {
+    title: 'Fact-checked copy',
+    body: "Discount codes, prices, deadlines and names are checked against your sources. If it isn't true for your brand, it doesn't go out.",
+    tone: 'royal',
+  },
+  {
+    title: 'Autopilot with guardrails',
+    body: 'Suggest, ask first, or full auto — per channel. Auto-publishing only happens above your brand-score bar, and a kill switch stops everything.',
+    span: 'md:col-span-2',
+    tone: 'violet',
+  },
+  {
+    title: 'Talk to your CMO',
+    body: '“Repurpose this blog for LinkedIn and X.” “Pause Instagram this week.” Type it in plain English and it gets done.',
+    tone: 'royal',
+  },
+  {
+    title: 'Post performance',
+    body: 'Engagement and reach read straight from Instagram, Facebook, X and more, per post and per channel. No spreadsheet.',
+    tone: 'sky',
+  },
+  {
+    title: 'Growth toolkit',
+    body: 'Tracked links and app installs, review replies, competitor watch, growth experiments, and 20+ ready documents.',
+    tone: 'violet',
+  },
+];
+
+const icons: Record<string, string> = {
+  "Brand Brain": "M12 3a6 6 0 0 0-6 6c0 2.2 1.2 3.8 2.5 5 .8.7 1.5 1.6 1.5 2.7V18h4v-1.3c0-1.1.7-2 1.5-2.7 1.3-1.2 2.5-2.8 2.5-5a6 6 0 0 0-6-6ZM10 21h4",
+  "Real product photos": "M4 7a2 2 0 0 1 2-2h2l1.5-2h5L16 5h2a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7Zm8 9a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Z",
+  "Fact-checked copy": "M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6l7-3Zm-3 9l2 2 4-4",
+  "Autopilot with guardrails": "M5 12h14M12 5l7 7-7 7",
+  "Talk to your CMO": "M4 5h16v11H8l-4 4V5Z",
+  "Post performance": "M4 20V10M10 20V4M16 20v-7M22 20H2",
+  "Growth toolkit": "M3 17l6-6 4 4 8-8M14 7h7v7"
+};
+
+const tones: Record<string, string> = {
+  violet: 'from-violet/15 to-transparent',
+  royal: 'from-royal/12 to-transparent',
+  sky: 'from-sky/15 to-transparent',
+};
+
+const modes = [
+  {
+    name: 'Suggest only',
+    body: 'AICMO drafts, you decide what happens to each post. Nothing is scheduled without you.',
+    tag: 'Full control',
+  },
+  {
+    name: 'Ask before posting',
+    body: 'Posts are written, designed and scheduled, then wait in your inbox for a one-tap approval.',
+    tag: 'Recommended to start',
+  },
+  {
+    name: 'Full autopilot',
+    body: 'Posts that clear your brand-score bar and the fact check publish on their own. Anything unsure still comes to you.',
+    tag: 'When you trust it',
+  },
+];
+
+const compare = [
+  ['Knows your brand and products', 'yes', 'Partly', 'Partly', 'no'],
+  ['Plans a strategy and calendar', 'yes', 'yes', 'Sometimes', 'no'],
+  ['Writes and designs every post', 'yes', 'yes', 'yes', 'You do it'],
+  ['Publishes on schedule', 'yes', 'yes', 'yes', 'You do it'],
+  ['Checks facts before posting', 'yes', 'Depends', 'Depends', 'no'],
+  ['Learns from post performance', 'Every week', 'Monthly report', 'Rarely', 'no'],
+  ['Available', '24 × 7', 'Office hours', 'When free', 'When you are'],
+  ['Monthly cost', 'From ₹999', 'Retainer', 'Retainer', 'Your time'],
+];
+
+const softwareLd = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: SITE.name,
+  applicationCategory: 'BusinessApplication',
+  operatingSystem: 'Web, Android',
+  description: SITE.description,
+  offers: PLANS.map((p) => ({
+    '@type': 'Offer',
+    name: p.name,
+    price: p.price,
+    priceCurrency: 'INR',
+    category: 'subscription',
+  })),
+};
+const faqLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: FAQ.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+};
+const websiteLd = { '@context': 'https://schema.org', '@type': 'WebSite', name: SITE.name, url: new URL(url('/'), Astro.site).href };
+---
+
+<Base jsonLd={[websiteLd, softwareLd, faqLd]}>
+  <!-- Hero -->
+  <section class="relative overflow-hidden">
+    <div class="pointer-events-none absolute inset-x-0 top-0 h-[520px] bg-[radial-gradient(60%_60%_at_50%_0%,rgb(155_77_255/0.10),transparent_70%)]"></div>
+    <div class="container-x relative grid items-center gap-16 pb-24 pt-14 md:pt-20 lg:grid-cols-[1.1fr_1fr] lg:gap-10 lg:pb-32">
+      <div>
+        <a href={url('/for/startups')} class="inline-flex items-center gap-2 rounded-full border border-line bg-white px-3 py-1.5 text-[13px] font-medium text-ink-soft transition-colors hover:border-[#cfcbc2]">
+          <span class="rounded-full bg-brand px-2 py-0.5 text-[11px] font-bold text-white">NEW</span>
+          Built for Indian startups and D2C brands
+          <span aria-hidden="true">→</span>
+        </a>
+        <h1 class="mt-6 text-[42px] font-semibold leading-[1.02] tracking-[-0.035em] sm:text-[58px] lg:text-[60px] xl:text-[66px]">
+          <span class="sm:whitespace-nowrap">Your marketing team,</span><br />
+          <span class="serif-accent text-brand pr-1">minus the payroll.</span>
+        </h1>
+        <p class="mt-6 max-w-[540px] text-[18px] leading-relaxed text-ink-soft sm:text-[19px]">
+          AICMO is an AI Chief Marketing Officer. It learns your brand from your website, plans your content, writes posts with your real product photos, and publishes them on schedule.{' '}
+          <span class="text-ink">You approve. It ships.</span>
+        </p>
+        <div class="mt-9" id="early-access-hero">
+          <EarlyAccess source="hero" />
+        </div>
+        <ul class="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-[13.5px] text-ink-mute">
+          <li class="flex items-center gap-2"><span class="text-royal">✓</span> Plans from ₹999/month</li>
+          <li class="flex items-center gap-2"><span class="text-royal">✓</span> You approve every post</li>
+          <li class="flex items-center gap-2"><span class="text-royal">✓</span> Cancel anytime</li>
+        </ul>
+      </div>
+      <HeroMock />
+    </div>
+  </section>
+
+  <!-- Channels -->
+  <section class="border-y border-line bg-white/60">
+    <div class="container-x flex flex-col items-center gap-6 py-9 md:flex-row md:justify-between">
+      <p class="shrink-0 text-[13px] font-medium text-ink-mute">Publishes to</p>
+      <ul class="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 md:justify-end">
+        {CHANNELS.map((c) => <li class="text-[16px] font-semibold tracking-tight text-ink/70">{c}</li>)}
+      </ul>
+    </div>
+  </section>
+
+  <!-- Problem -->
+  <section class="container-x py-24 md:py-32" data-reveal>
+    <div class="mx-auto max-w-3xl text-center">
+      <p class="eyebrow">The problem</p>
+      <h2 class="mt-4 text-[34px] font-semibold leading-tight tracking-[-0.03em] sm:text-[46px]">
+        You started a company, <span class="serif-accent">not a content agency.</span>
+      </h2>
+      <p class="mt-5 text-[18px] leading-relaxed text-ink-soft">
+        Marketing is the job that never ends: ideas every day, posts for every channel, images, captions, timing, and then working out what actually moved the needle. An agency costs a retainer. A freelancer needs briefing. ChatGPT gives you a blank box.
+      </p>
+    </div>
+    <div class="mt-14 grid gap-5 md:grid-cols-3">
+      {
+        [
+          ['The blank page', 'What do we post today? And tomorrow? For three channels?'],
+          ['The inconsistency', 'Two great weeks, then a launch eats your time and the feed goes quiet for a month.'],
+          ['The guesswork', 'Likes in one app, clicks in another, and no idea which post brought customers.'],
+        ].map(([t, b]) => (
+          <div class="card p-7">
+            <h3 class="text-[18px] font-semibold">{t}</h3>
+            <p class="mt-2 text-[15px] leading-relaxed text-ink-mute">{b}</p>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section id="how" class="scroll-mt-20 bg-ink text-white">
+    <div class="container-x py-24 md:py-32">
+      <div class="max-w-2xl" data-reveal>
+        <p class="eyebrow !text-sky">How it works</p>
+        <h2 class="mt-4 text-[34px] font-semibold leading-tight tracking-[-0.03em] sm:text-[46px]">
+          From website to weekly posting <span class="serif-accent text-brand">in one afternoon.</span>
+        </h2>
+      </div>
+      <ol class="mt-16 grid gap-px overflow-hidden rounded-[28px] bg-white/10 md:grid-cols-2 lg:grid-cols-4">
+        {
+          steps.map((s) => (
+            <li class="bg-ink p-8" data-reveal>
+              <span class="font-serif text-[40px] italic text-white/35">{s.n}</span>
+              <h3 class="mt-6 text-[19px] font-semibold">{s.title}</h3>
+              <p class="mt-3 text-[15px] leading-relaxed text-white/60">{s.body}</p>
+            </li>
+          ))
+        }
+      </ol>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section id="product" class="container-x scroll-mt-20 py-24 md:py-32">
+    <div class="max-w-2xl" data-reveal>
+      <p class="eyebrow">Product</p>
+      <h2 class="mt-4 text-[34px] font-semibold leading-tight tracking-[-0.03em] sm:text-[46px]">
+        Everything a CMO does. <span class="serif-accent">None of the meetings.</span>
+      </h2>
+    </div>
+    <div class="mt-14 grid gap-5 md:grid-cols-3">
+      {
+        features.map((f) => (
+          <div class={`card relative overflow-hidden p-8 ${f.span ?? ''}`} data-reveal>
+            <div class={`pointer-events-none absolute inset-0 bg-gradient-to-br ${tones[f.tone]}`} />
+            <span class="relative grid h-11 w-11 place-items-center rounded-2xl border border-line bg-white text-royal shadow-sm">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d={icons[f.title]} /></svg>
+            </span>
+            <h3 class="relative mt-6 text-[20px] font-semibold tracking-tight">{f.title}</h3>
+            <p class="relative mt-3 max-w-md text-[15.5px] leading-relaxed text-ink-soft">{f.body}</p>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  <!-- Control -->
+  <section class="bg-paper-2/70">
+    <div class="container-x py-24 md:py-32">
+      <div class="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+        <div data-reveal>
+          <p class="eyebrow">You stay in charge</p>
+          <h2 class="mt-4 text-[34px] font-semibold leading-tight tracking-[-0.03em] sm:text-[46px]">
+            Autopilot when you want it. <span class="serif-accent">A brake when you don't.</span>
+          </h2>
+          <p class="mt-5 text-[17px] leading-relaxed text-ink-soft">
+            Set how much freedom AICMO has on each channel. Start by approving everything, then let it run the channels you trust. Every action is logged, and one switch pauses it all.
+          </p>
+        </div>
+        <div class="grid gap-4" data-reveal>
+          {
+            modes.map((m, i) => (
+              <div class={`card flex items-start gap-5 p-6 ${i === 1 ? 'ring-2 ring-royal/30' : ''}`}>
+                <span class="grid h-10 w-10 shrink-0 place-items-center rounded-2xl bg-brand text-[15px] font-bold text-white">{i + 1}</span>
+                <div>
+                  <div class="flex flex-wrap items-center gap-2">
+                    <h3 class="text-[17px] font-semibold">{m.name}</h3>
+                    <span class="rounded-full bg-paper-2 px-2.5 py-0.5 text-[11.5px] font-semibold text-ink-mute">{m.tag}</span>
+                  </div>
+                  <p class="mt-1.5 text-[15px] leading-relaxed text-ink-mute">{m.body}</p>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Comparison -->
+  <section class="container-x py-24 md:py-32" data-reveal>
+    <div class="mx-auto max-w-2xl text-center">
+      <p class="eyebrow">Compare</p>
+      <h2 class="mt-4 text-[34px] font-semibold leading-tight tracking-[-0.03em] sm:text-[46px]">
+        The output of a team. <span class="serif-accent">The price of a tool.</span>
+      </h2>
+    </div>
+    <div class="card mt-14 overflow-x-auto">
+      <table class="w-full min-w-[720px] text-left text-[14.5px]">
+        <thead>
+          <tr class="border-b border-line">
+            <th class="p-5 font-medium text-ink-mute"></th>
+            <th class="p-5"><span class="rounded-full bg-ink px-3 py-1.5 text-[13px] font-semibold text-white">AICMO</span></th>
+            <th class="p-5 font-semibold">Agency</th>
+            <th class="p-5 font-semibold">Freelancer</th>
+            <th class="p-5 font-semibold">DIY with AI tools</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-line">
+          {
+            compare.map(([label, ...cells]) => (
+              <tr>
+                <td class="p-5 font-medium">{label}</td>
+                {cells.map((c, i) => (
+                  <td class={`p-5 ${i === 0 ? 'font-semibold text-ink' : 'text-ink-mute'}`}>
+                    {c === 'yes' ? <span class="text-royal">✓</span> : c === 'no' ? <span class="text-ink-mute/60">—</span> : c}
+                  </td>
+                ))}
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+    </div>
+    <p class="mt-4 text-center text-[13px] text-ink-mute">
+      Want the full breakdown? <a class="font-medium text-royal underline underline-offset-4" href={url('/blog/ai-cmo-vs-agency-vs-freelancer')}>AI CMO vs agency vs freelancer</a>
+    </p>
+  </section>
+
+  <!-- Built for -->
+  <section class="container-x pb-24 md:pb-32">
+    <div class="grid gap-5 md:grid-cols-3">
+      {
+        [
+          ['D2C & Shopify brands', 'Your catalogue, prices and product photos, turned into a steady stream of posts that sell.', '/for/d2c-brands'],
+          ['Startups & apps', 'Launch plans, build-in-public posts, tracked links to your app store listing, review replies.', '/for/startups'],
+          ['Agencies', 'Run three client brands from one account, each with its own Brand Brain and approval flow.', '/for/agencies'],
+        ].map(([t, b, href]) => (
+          <a href={url(href)} class="card group p-8 transition-transform hover:-translate-y-0.5" data-reveal>
+            <h3 class="text-[20px] font-semibold tracking-tight">{t}</h3>
+            <p class="mt-3 text-[15px] leading-relaxed text-ink-mute">{b}</p>
+            <span class="mt-6 inline-flex items-center gap-1.5 text-[14px] font-semibold text-royal">
+              Learn more <span class="transition-transform group-hover:translate-x-0.5">→</span>
+            </span>
+          </a>
+        ))
+      }
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="pricing" class="scroll-mt-20 bg-paper-2/70">
+    <div class="container-x py-24 md:py-32">
+      <div class="mx-auto max-w-2xl text-center" data-reveal>
+        <p class="eyebrow">Pricing</p>
+        <h2 class="mt-4 text-[34px] font-semibold leading-tight tracking-[-0.03em] sm:text-[46px]">
+          Simple plans, <span class="serif-accent">priced for India.</span>
+        </h2>
+        <p class="mt-4 text-[17px] text-ink-soft">Every plan starts with a 7-day trial. Pay by card or UPI Autopay.</p>
+      </div>
+      <div class="mt-14" data-reveal>
+        <PricingCards />
+      </div>
+      <p class="mt-8 text-center text-[14px] text-ink-mute">
+        Prices exclude GST. <a href={url('/pricing')} class="font-medium text-royal underline underline-offset-4">See what credits cover →</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="container-x py-24 md:py-32">
+    <div class="grid gap-12 lg:grid-cols-[0.8fr_1.2fr]">
+      <div data-reveal>
+        <p class="eyebrow">FAQ</p>
+        <h2 class="mt-4 text-[34px] font-semibold leading-tight tracking-[-0.03em] sm:text-[42px]">Questions, answered.</h2>
+        <p class="mt-4 text-[16px] text-ink-soft">
+          Something else? Write to <a class="text-royal underline underline-offset-4" href={`mailto:${SITE.contactEmail}`}>{SITE.contactEmail}</a>.
+        </p>
+      </div>
+      <div data-reveal><Faq items={FAQ} /></div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section id="early-access" class="container-x scroll-mt-24 pb-24 md:pb-32">
+    <div class="relative overflow-hidden rounded-[36px] bg-ink px-6 py-16 text-center text-white sm:px-12 md:py-24" data-dark>
+      <div class="glow left-[10%] top-[-30%] h-72 w-72 bg-violet"></div>
+      <div class="glow right-[5%] bottom-[-40%] h-72 w-72 bg-sky"></div>
+      <div class="relative mx-auto max-w-2xl">
+        <h2 class="text-[34px] font-semibold leading-tight tracking-[-0.03em] sm:text-[52px]">
+          Hire your AI CMO <span class="serif-accent text-brand">today.</span>
+        </h2>
+        <p class="mx-auto mt-5 max-w-lg text-[17px] leading-relaxed text-white/65">
+          Give it your website this afternoon. Approve your first week of posts tonight.
+        </p>
+        <div class="mt-9 flex justify-center">
+          <EarlyAccess source="footer-cta" dark />
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>

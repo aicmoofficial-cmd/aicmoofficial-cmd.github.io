@@ -1,0 +1,83 @@
+---
+import { SITE } from '../lib/site';
+
+interface Props {
+  /** Where on the site the form sits, stored with the request. */
+  source?: string;
+  dark?: boolean;
+}
+const { source = 'site', dark = false } = Astro.props;
+---
+
+{
+  SITE.signupOpen ? (
+    <div class="flex flex-col items-center gap-3 sm:flex-row">
+      <a href={`${SITE.appUrl}/?signup=1`} class="btn-primary">Start your 7-day trial</a>
+      <span class={`text-[13px] ${dark ? 'text-white/60' : 'text-ink-mute'}`}>Card or UPI Autopay · cancel anytime</span>
+    </div>
+  ) : (
+    <form class="w-full max-w-[520px]" data-waitlist data-source={source} data-api={SITE.apiUrl} data-dark={dark ? "" : undefined} novalidate>
+      <div class={`flex flex-col gap-2 rounded-[22px] p-1.5 sm:flex-row sm:rounded-full ${dark ? 'bg-white/10 ring-1 ring-white/15' : 'bg-white ring-1 ring-line shadow-[0_12px_32px_-18px_rgb(12_11_20/0.25)]'}`}>
+        <label class="sr-only" for={`email-${source}`}>Work email</label>
+        <input
+          id={`email-${source}`}
+          name="email"
+          type="email"
+          required
+          autocomplete="email"
+          placeholder="you@yourstartup.com"
+          class={`h-12 min-w-0 flex-1 rounded-full bg-transparent px-5 text-[15px] outline-none ${dark ? 'text-white placeholder:text-white/45' : 'placeholder:text-ink-mute'}`}
+        />
+        <input type="text" name="company_website" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true" />
+        <button type="submit" class={`h-12 shrink-0 rounded-full px-6 text-[15px] font-semibold transition-colors ${dark ? 'bg-white text-ink hover:bg-white/90' : 'bg-ink text-white hover:bg-[#1c1a2b]'}`}>
+          Get early access
+        </button>
+      </div>
+      <p class={`mt-3 px-2 text-[13px] ${dark ? 'text-white/60' : 'text-ink-mute'}`} data-msg>
+        We're onboarding founders in small batches. 7-day trial when your invite arrives.
+      </p>
+    </form>
+  )
+}
+
+<script>
+  document.querySelectorAll<HTMLFormElement>('form[data-waitlist]').forEach((form) => {
+    const msg = form.querySelector<HTMLElement>('[data-msg]')!;
+    const button = form.querySelector<HTMLButtonElement>('button')!;
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const data = new FormData(form);
+      const email = String(data.get('email') || '').trim();
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) {
+        msg.textContent = 'Please enter a valid email address.';
+        msg.style.color = '#e11d48';
+        return;
+      }
+      button.disabled = true;
+      button.textContent = 'Sending…';
+      const params = new URLSearchParams(location.search);
+      try {
+        const res = await fetch(`${form.dataset.api}/api/waitlist`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            email,
+            source: form.dataset.source,
+            page: location.pathname,
+            utm: Object.fromEntries([...params].filter(([k]) => k.startsWith('utm_'))),
+            referrer: document.referrer || undefined,
+            trap: data.get('company_website') || undefined,
+          }),
+        });
+        if (!res.ok) throw new Error((await res.json().catch(() => ({}))).error || 'Request failed');
+        form.innerHTML = `<div class="rounded-2xl px-5 py-4 text-[15px] font-medium ${form.closest('[data-dark]') ? 'bg-white/10 text-white' : 'bg-emerald-50 text-emerald-800'}">You're on the list. We'll email ${email.replace(/</g, '')} when your invite is ready.</div>`;
+        (window as any).gtag?.('event', 'generate_lead', { source: form.dataset.source });
+      } catch (err: any) {
+        msg.textContent = err?.message && !/fetch/i.test(err.message) ? err.message : "Couldn't reach us just now. Please try again in a minute.";
+        msg.style.color = '#e11d48';
+        button.disabled = false;
+        button.textContent = 'Get early access';
+      }
+    });
+  });
+</script>

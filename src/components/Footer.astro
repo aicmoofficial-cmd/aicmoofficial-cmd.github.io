@@ -1,0 +1,75 @@
+---
+import { SITE, url } from '../lib/site';
+
+const cols = [
+  {
+    title: 'Product',
+    links: [
+      ['Features', url('/#product')],
+      ['How it works', url('/#how')],
+      ['Pricing', url('/pricing')],
+      [SITE.signupOpen ? 'Start free trial' : 'Early access', url('/#early-access')],
+    ],
+  },
+  {
+    title: 'Built for',
+    links: [
+      ['D2C & Shopify brands', url('/for/d2c-brands')],
+      ['Startups & apps', url('/for/startups')],
+      ['Agencies', url('/for/agencies')],
+    ],
+  },
+  {
+    title: 'Resources',
+    links: [
+      ['Blog', url('/blog')],
+      ['AICMO vs agency vs freelancer', url('/blog/ai-cmo-vs-agency-vs-freelancer')],
+      ['30-day content plan', url('/blog/30-day-social-media-content-plan-for-startups')],
+    ],
+  },
+  {
+    title: 'Company',
+    links: [
+      ['Contact', `mailto:${SITE.contactEmail}`],
+      ['Privacy policy', url('/privacy')],
+      ['Terms of service', url('/terms')],
+      ['Data deletion', url('/data-deletion')],
+    ],
+  },
+];
+const year = new Date().getFullYear();
+---
+
+<footer class="border-t border-line bg-paper-2/60">
+  <div class="container-x grid gap-12 py-16 md:grid-cols-[1.4fr_repeat(4,1fr)]">
+    <div class="max-w-xs">
+      <a href={url('/')} class="flex items-center gap-2.5">
+        <img src={url('/logo-mark.png')} alt="" width="28" height="28" class="h-7 w-7 object-contain" loading="lazy" />
+        <span class="text-[17px] font-bold tracking-tight">AICMO</span>
+      </a>
+      <p class="mt-4 text-[14px] leading-relaxed text-ink-mute">
+        The AI Chief Marketing Officer for startups. Plans, writes, publishes and learns. Made in India.
+      </p>
+    </div>
+    {
+      cols.map((c) => (
+        <div>
+          <h2 class="text-[13px] font-semibold text-ink">{c.title}</h2>
+          <ul class="mt-4 space-y-3">
+            {c.links.map(([label, href]) => (
+              <li>
+                <a href={href} class="text-[14px] text-ink-mute transition-colors hover:text-ink">
+                  {label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))
+    }
+  </div>
+  <div class="container-x flex flex-col gap-2 border-t border-line py-6 text-[13px] text-ink-mute sm:flex-row sm:items-center sm:justify-between">
+    <span>© {year} {SITE.legalName}. All rights reserved.</span>
+    <span>Prices in INR, exclusive of GST.</span>
+  </div>
+</footer>

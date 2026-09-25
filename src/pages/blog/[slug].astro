@@ -1,0 +1,90 @@
+---
+import { getCollection, render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import EarlyAccess from '../../components/EarlyAccess.astro';
+import { SITE, url } from '../../lib/site';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog', ({ data }) => !data.draft);
+  return posts.map((post) => ({ params: { slug: post.id }, props: { post, all: posts } }));
+}
+
+const { post, all } = Astro.props;
+const { Content } = await render(post);
+const d = post.data;
+const fmt = (x: Date) => x.toLocaleDateString('en-IN', { day: 'numeric', month: 'long', year: 'numeric' });
+const more = all.filter((p) => p.id !== post.id).slice(0, 2);
+const pageUrl = new URL(Astro.url.pathname, Astro.site).href;
+
+const ld = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: d.title,
+    description: d.description,
+    datePublished: d.date.toISOString(),
+    dateModified: (d.updated ?? d.date).toISOString(),
+    mainEntityOfPage: pageUrl,
+    author: { '@type': 'Organization', name: SITE.name },
+    publisher: { '@type': 'Organization', name: SITE.name, logo: { '@type': 'ImageObject', url: new URL(url('/logo-mark.png'), Astro.site).href } },
+    image: new URL(url('/og.png'), Astro.site).href,
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Blog', item: new URL(url('/blog'), Astro.site).href },
+      { '@type': 'ListItem', position: 2, name: d.title, item: pageUrl },
+    ],
+  },
+];
+---
+
+<Base title={d.title} description={d.description} type="article" publishedTime={d.date.toISOString()} jsonLd={ld}>
+  <article>
+    <header class="container-x max-w-[820px] pb-10 pt-14 md:pt-20">
+      <a href={url('/blog')} class="text-[14px] font-medium text-ink-mute hover:text-ink">← All articles</a>
+      <p class="mt-8 text-[13px] font-semibold text-royal">{d.category} · {d.readMinutes} min read</p>
+      <h1 class="mt-4 text-[36px] font-semibold leading-[1.1] tracking-[-0.03em] sm:text-[48px]">{d.title}</h1>
+      <p class="mt-5 text-[19px] leading-relaxed text-ink-soft">{d.description}</p>
+      <p class="mt-6 text-[14px] text-ink-mute">
+        By the AICMO team · <time datetime={d.date.toISOString()}>{fmt(d.date)}</time>
+      </p>
+    </header>
+    <div class="container-x max-w-[820px]">
+      <div class="h-px bg-line"></div>
+      <div class="prose-aicmo py-12">
+        <Content />
+      </div>
+    </div>
+  </article>
+
+  <section class="container-x max-w-[820px] pb-16">
+    <div class="relative overflow-hidden rounded-[28px] bg-ink p-8 text-white sm:p-12" data-dark>
+      <div class="glow right-[-10%] top-[-30%] h-56 w-56 bg-violet"></div>
+      <h2 class="relative text-[28px] font-semibold leading-tight tracking-[-0.025em] sm:text-[34px]">
+        Let your AI CMO <span class="serif-accent text-brand">run this playbook.</span>
+      </h2>
+      <p class="relative mt-3 max-w-lg text-[16px] text-white/65">
+        AICMO plans, writes, fact-checks and publishes your posts. You approve in minutes.
+      </p>
+      <div class="relative mt-7"><EarlyAccess source={`blog-${post.id}`} dark /></div>
+    </div>
+  </section>
+
+  {
+    more.length > 0 && (
+      <section class="container-x max-w-[820px] pb-24">
+        <h2 class="text-[20px] font-semibold">Keep reading</h2>
+        <div class="mt-5 grid gap-5 sm:grid-cols-2">
+          {more.map((p) => (
+            <a href={url(`/blog/${p.id}`)} class="card group p-6">
+              <p class="text-[12.5px] font-semibold text-royal">{p.data.category}</p>
+              <h3 class="mt-2 text-[17px] font-semibold leading-snug group-hover:text-royal">{p.data.title}</h3>
+            </a>
+          ))}
+        </div>
+      </section>
+    )
+  }
+</Base>
