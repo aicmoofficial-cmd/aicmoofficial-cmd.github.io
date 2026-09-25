@@ -4,9 +4,9 @@
  */
 export const SITE = {
   name: 'AICMO',
-  title: 'AICMO — the AI Chief Marketing Officer for startups',
+  title: 'AICMO — your AI Chief Marketing Officer: research, strategy, content and analytics',
   description:
-    'AICMO learns your brand from your website, plans your marketing, writes on-brand posts with your real product photos, and publishes them to Instagram, Facebook, LinkedIn and X. You approve, it ships.',
+    'AICMO is an all-in-one AI marketing team for startups and D2C brands: it researches your market and competitors, analyzes reviews, plans your strategy, creates on-brand content, publishes to 9 channels and measures what works.',
   /** The product (sign-up / sign-in). */
   appUrl: 'https://aicmo-delta.vercel.app',
   /** API that stores early-access requests (POST /api/waitlist). */
@@ -58,9 +58,10 @@ export const PLANS: Plan[] = [
       '1 brand, 3 channels',
       '75 credits a month (≈ 60 posts, or 40 posts + 10 AI images)',
       'Unlimited product photo cards',
-      'Brand Brain, strategy and content calendar',
+      'Brand Brain, marketing strategy and content calendar',
+      'Conversation radar and website health',
       'Approve every post before it goes out',
-      'Post performance and analytics',
+      'Post performance and tracked links',
     ],
   },
   {
@@ -76,8 +77,9 @@ export const PLANS: Plan[] = [
       '1 brand, every channel',
       '250 credits a month (≈ 120 posts + 40 AI images)',
       'Full autopilot with brand-score and fact-check gates',
-      'Tracked links, app installs and review replies',
-      'Competitor watch and growth experiments',
+      'Competitor watch and review analysis',
+      'App install attribution and review replies',
+      'Growth experiments with statistical readouts',
       '20+ strategy documents (launch plans, ASO, pitch deck…)',
       '2 team members',
     ],

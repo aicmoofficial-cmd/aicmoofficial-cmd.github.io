@@ -6,85 +6,9 @@ import PricingCards from '../components/PricingCards.astro';
 import Faq from '../components/Faq.astro';
 import { CHANNELS, PLANS, SITE, url } from '../lib/site';
 import { FAQ } from '../lib/faq';
+import { COMING_NEXT, STAGES } from '../lib/platform';
 
-const steps = [
-  {
-    n: '01',
-    title: 'Paste your website',
-    body: 'AICMO reads your site and builds your Brand Brain: voice, audience, products, offers and competitors. Shopify stores bring their catalogue and prices along.',
-  },
-  {
-    n: '02',
-    title: 'Get a plan, not a prompt box',
-    body: 'Your AI CMO writes a positioning, content pillars and a weekly cadence for each channel, then fills your calendar with posts that follow them.',
-  },
-  {
-    n: '03',
-    title: 'Approve in one tap',
-    body: 'Every post arrives with its image, the reason it was written and a fact check. Approve, edit or reject from your phone. Or switch a channel to autopilot.',
-  },
-  {
-    n: '04',
-    title: 'It measures, then learns',
-    body: "After posting, AICMO reads likes, comments, shares and reach from each network and feeds your best and weakest posts into next week's plan.",
-  },
-];
-
-const features = [
-  {
-    title: 'Brand Brain',
-    body: 'Your voice, audience, pillars, offers and product facts in one place. Every post is written from it, so nothing sounds generic.',
-    span: 'md:col-span-2',
-    tone: 'violet',
-  },
-  {
-    title: 'Real product photos',
-    body: 'Turns your catalogue into ready-to-post photo cards with name and price. Or generate an image, or upload your own.',
-    tone: 'sky',
-  },
-  {
-    title: 'Fact-checked copy',
-    body: "Discount codes, prices, deadlines and names are checked against your sources. If it isn't true for your brand, it doesn't go out.",
-    tone: 'royal',
-  },
-  {
-    title: 'Autopilot with guardrails',
-    body: 'Suggest, ask first, or full auto — per channel. Auto-publishing only happens above your brand-score bar, and a kill switch stops everything.',
-    span: 'md:col-span-2',
-    tone: 'violet',
-  },
-  {
-    title: 'Talk to your CMO',
-    body: '“Repurpose this blog for LinkedIn and X.” “Pause Instagram this week.” Type it in plain English and it gets done.',
-    tone: 'royal',
-  },
-  {
-    title: 'Post performance',
-    body: 'Engagement and reach read straight from Instagram, Facebook, X and more, per post and per channel. No spreadsheet.',
-    tone: 'sky',
-  },
-  {
-    title: 'Growth toolkit',
-    body: 'Tracked links and app installs, review replies, competitor watch, growth experiments, and 20+ ready documents.',
-    tone: 'violet',
-  },
-];
-
-const icons: Record<string, string> = {
-  "Brand Brain": "M12 3a6 6 0 0 0-6 6c0 2.2 1.2 3.8 2.5 5 .8.7 1.5 1.6 1.5 2.7V18h4v-1.3c0-1.1.7-2 1.5-2.7 1.3-1.2 2.5-2.8 2.5-5a6 6 0 0 0-6-6ZM10 21h4",
-  "Real product photos": "M4 7a2 2 0 0 1 2-2h2l1.5-2h5L16 5h2a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7Zm8 9a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Z",
-  "Fact-checked copy": "M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6l7-3Zm-3 9l2 2 4-4",
-  "Autopilot with guardrails": "M5 12h14M12 5l7 7-7 7",
-  "Talk to your CMO": "M4 5h16v11H8l-4 4V5Z",
-  "Post performance": "M4 20V10M10 20V4M16 20v-7M22 20H2",
-  "Growth toolkit": "M3 17l6-6 4 4 8-8M14 7h7v7"
-};
-
-const tones: Record<string, string> = {
-  violet: 'from-violet/15 to-transparent',
-  royal: 'from-royal/12 to-transparent',
-  sky: 'from-sky/15 to-transparent',
-};
+const tones = ['text-sky', 'text-violet', 'text-royal', 'text-royal', 'text-violet', 'text-emerald-600', 'text-sky'];
 
 const modes = [
   {
@@ -105,14 +29,16 @@ const modes = [
 ];
 
 const compare = [
-  ['Knows your brand and products', 'yes', 'Partly', 'Partly', 'no'],
-  ['Plans a strategy and calendar', 'yes', 'yes', 'Sometimes', 'no'],
-  ['Writes and designs every post', 'yes', 'yes', 'yes', 'You do it'],
-  ['Publishes on schedule', 'yes', 'yes', 'yes', 'You do it'],
+  ['Researches your market and competitors', 'yes', 'yes', 'Sometimes', 'Research tool'],
+  ['Analyzes reviews and customer feedback', 'yes', 'Sometimes', 'no', 'Another tool'],
+  ['Plans strategy and campaigns', 'yes', 'yes', 'Sometimes', 'You do it'],
+  ['Creates posts, images and documents', 'yes', 'yes', 'yes', 'Design + AI tools'],
+  ['Publishes on schedule', 'yes', 'yes', 'yes', 'Scheduler'],
   ['Checks facts before posting', 'yes', 'Depends', 'Depends', 'no'],
-  ['Learns from post performance', 'Every week', 'Monthly report', 'Rarely', 'no'],
+  ['Measures clicks, installs and engagement', 'yes', 'Monthly report', 'Rarely', 'Analytics tool'],
+  ['Runs and compares experiments', 'yes', 'Sometimes', 'no', 'Spreadsheet'],
   ['Available', '24 × 7', 'Office hours', 'When free', 'When you are'],
-  ['Monthly cost', 'From ₹999', 'Retainer', 'Retainer', 'Your time'],
+  ['Monthly cost', 'From ₹999', 'Retainer', 'Retainer', 'Several subscriptions'],
 ];
 
 const softwareLd = {
@@ -144,25 +70,25 @@ const websiteLd = { '@context': 'https://schema.org', '@type': 'WebSite', name: 
     <div class="pointer-events-none absolute inset-x-0 top-0 h-[520px] bg-[radial-gradient(60%_60%_at_50%_0%,rgb(155_77_255/0.10),transparent_70%)]"></div>
     <div class="container-x relative grid items-center gap-16 pb-24 pt-14 md:pt-20 lg:grid-cols-[1.1fr_1fr] lg:gap-10 lg:pb-32">
       <div>
-        <a href={url('/for/startups')} class="inline-flex items-center gap-2 rounded-full border border-line bg-white px-3 py-1.5 text-[13px] font-medium text-ink-soft transition-colors hover:border-[#cfcbc2]">
+        <a href={url('/platform')} class="inline-flex items-center gap-2 rounded-full border border-line bg-white px-3 py-1.5 text-[13px] font-medium text-ink-soft transition-colors hover:border-[#cfcbc2]">
           <span class="rounded-full bg-brand px-2 py-0.5 text-[11px] font-bold text-white">NEW</span>
-          Built for Indian startups and D2C brands
+          Research · Plan · Create · Publish · Measure
           <span aria-hidden="true">→</span>
         </a>
         <h1 class="mt-6 text-[42px] font-semibold leading-[1.02] tracking-[-0.035em] sm:text-[58px] lg:text-[60px] xl:text-[66px]">
-          <span class="sm:whitespace-nowrap">Your marketing team,</span><br />
-          <span class="serif-accent text-brand pr-1">minus the payroll.</span>
+          <span class="sm:whitespace-nowrap">Your whole marketing</span><br />
+          <span class="sm:whitespace-nowrap">team, <span class="serif-accent text-brand pr-1">in one AI.</span></span>
         </h1>
         <p class="mt-6 max-w-[540px] text-[18px] leading-relaxed text-ink-soft sm:text-[19px]">
-          AICMO is an AI Chief Marketing Officer. It learns your brand from your website, plans your content, writes posts with your real product photos, and publishes them on schedule.{' '}
-          <span class="text-ink">You approve. It ships.</span>
+          AICMO is your AI Chief Marketing Officer. It researches your market and competitors, analyzes what customers say, plans your strategy, creates the content, publishes it everywhere and measures what works.{' '}
+          <span class="text-ink">One AI CMO instead of an agency and ten tools.</span>
         </p>
         <div class="mt-9" id="early-access-hero">
           <EarlyAccess source="hero" />
         </div>
         <ul class="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-[13.5px] text-ink-mute">
           <li class="flex items-center gap-2"><span class="text-royal">✓</span> Plans from ₹999/month</li>
-          <li class="flex items-center gap-2"><span class="text-royal">✓</span> You approve every post</li>
+          <li class="flex items-center gap-2"><span class="text-royal">✓</span> You approve what goes out</li>
           <li class="flex items-center gap-2"><span class="text-royal">✓</span> Cancel anytime</li>
         </ul>
       </div>
@@ -185,18 +111,18 @@ const websiteLd = { '@context': 'https://schema.org', '@type': 'WebSite', name: 
     <div class="mx-auto max-w-3xl text-center">
       <p class="eyebrow">The problem</p>
       <h2 class="mt-4 text-[34px] font-semibold leading-tight tracking-[-0.03em] sm:text-[46px]">
-        You started a company, <span class="serif-accent">not a content agency.</span>
+        Marketing is ten jobs. <span class="serif-accent">You've been doing all of them.</span>
       </h2>
       <p class="mt-5 text-[18px] leading-relaxed text-ink-soft">
-        Marketing is the job that never ends: ideas every day, posts for every channel, images, captions, timing, and then working out what actually moved the needle. An agency costs a retainer. A freelancer needs briefing. ChatGPT gives you a blank box.
+        Research, strategy, copy, design, scheduling, analytics, reviews, experiments. Each comes with its own tool, its own login and its own spreadsheet, and none of them talk to each other. An agency costs a retainer. A freelancer covers one piece.
       </p>
     </div>
     <div class="mt-14 grid gap-5 md:grid-cols-3">
       {
         [
-          ['The blank page', 'What do we post today? And tomorrow? For three channels?'],
-          ['The inconsistency', 'Two great weeks, then a launch eats your time and the feed goes quiet for a month.'],
-          ['The guesswork', 'Likes in one app, clicks in another, and no idea which post brought customers.'],
+          ['Too many tools', 'A research tool, a scheduler, a design app, analytics, a review dashboard. Paid for separately, stitched together by you.'],
+          ['No one owns the plan', 'Posts go out, but nobody connects them to a strategy, to what competitors are doing, or to what customers keep asking for.'],
+          ['No feedback loop', 'Likes in one app, clicks in another, installs in a third. Nobody has time to work out what worked and do more of it.'],
         ].map(([t, b]) => (
           <div class="card p-7">
             <h3 class="text-[18px] font-semibold">{t}</h3>
@@ -207,50 +133,83 @@ const websiteLd = { '@context': 'https://schema.org', '@type': 'WebSite', name: 
     </div>
   </section>
 
-  <!-- How it works -->
+  <!-- The loop -->
   <section id="how" class="scroll-mt-20 bg-ink text-white">
     <div class="container-x py-24 md:py-32">
       <div class="max-w-2xl" data-reveal>
         <p class="eyebrow !text-sky">How it works</p>
         <h2 class="mt-4 text-[34px] font-semibold leading-tight tracking-[-0.03em] sm:text-[46px]">
-          From website to weekly posting <span class="serif-accent text-brand">in one afternoon.</span>
+          The complete marketing loop, <span class="serif-accent text-brand">run by one AI.</span>
         </h2>
+        <p class="mt-5 text-[17px] leading-relaxed text-white/60">
+          Give AICMO your website. It learns your brand, runs every stage of marketing, and feeds what it measures back into the next plan.
+        </p>
       </div>
-      <ol class="mt-16 grid gap-px overflow-hidden rounded-[28px] bg-white/10 md:grid-cols-2 lg:grid-cols-4">
+      <ol class="mt-16 grid gap-px overflow-hidden rounded-[28px] bg-white/10 sm:grid-cols-2 lg:grid-cols-4">
         {
-          steps.map((s) => (
-            <li class="bg-ink p-8" data-reveal>
-              <span class="font-serif text-[40px] italic text-white/35">{s.n}</span>
-              <h3 class="mt-6 text-[19px] font-semibold">{s.title}</h3>
-              <p class="mt-3 text-[15px] leading-relaxed text-white/60">{s.body}</p>
+          STAGES.map((s, i) => (
+            <li class="bg-ink p-7" data-reveal>
+              <div class="flex items-center justify-between">
+                <span class="font-serif text-[34px] italic text-white/30">{String(i + 1).padStart(2, '0')}</span>
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="text-sky"><path d={s.icon} /></svg>
+              </div>
+              <h3 class="mt-5 text-[19px] font-semibold">{s.name}</h3>
+              <p class="mt-1 text-[13px] font-medium text-white/45">{s.verb}</p>
+              <p class="mt-3 text-[14.5px] leading-relaxed text-white/60">{s.summary}</p>
             </li>
           ))
         }
+        <li class="flex flex-col justify-between bg-gradient-to-br from-violet/30 to-royal/30 p-7" data-reveal>
+          <p class="font-serif text-[26px] italic leading-snug text-white">…and back to research, a little smarter every week.</p>
+          <a href={url('/platform')} class="mt-6 inline-flex items-center gap-1.5 text-[14px] font-semibold text-white">
+            See every tool <span aria-hidden="true">→</span>
+          </a>
+        </li>
       </ol>
     </div>
   </section>
 
-  <!-- Features -->
+  <!-- Platform -->
   <section id="product" class="container-x scroll-mt-20 py-24 md:py-32">
-    <div class="max-w-2xl" data-reveal>
-      <p class="eyebrow">Product</p>
-      <h2 class="mt-4 text-[34px] font-semibold leading-tight tracking-[-0.03em] sm:text-[46px]">
-        Everything a CMO does. <span class="serif-accent">None of the meetings.</span>
-      </h2>
+    <div class="flex flex-col gap-6 md:flex-row md:items-end md:justify-between" data-reveal>
+      <div class="max-w-2xl">
+        <p class="eyebrow">Platform</p>
+        <h2 class="mt-4 text-[34px] font-semibold leading-tight tracking-[-0.03em] sm:text-[46px]">
+          Everything a marketing team does. <span class="serif-accent">One login.</span>
+        </h2>
+      </div>
+      <a href={url('/platform')} class="btn-secondary shrink-0">Explore the platform</a>
     </div>
-    <div class="mt-14 grid gap-5 md:grid-cols-3">
+    <div class="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
       {
-        features.map((f) => (
-          <div class={`card relative overflow-hidden p-8 ${f.span ?? ''}`} data-reveal>
-            <div class={`pointer-events-none absolute inset-0 bg-gradient-to-br ${tones[f.tone]}`} />
-            <span class="relative grid h-11 w-11 place-items-center rounded-2xl border border-line bg-white text-royal shadow-sm">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d={icons[f.title]} /></svg>
-            </span>
-            <h3 class="relative mt-6 text-[20px] font-semibold tracking-tight">{f.title}</h3>
-            <p class="relative mt-3 max-w-md text-[15.5px] leading-relaxed text-ink-soft">{f.body}</p>
-          </div>
+        STAGES.map((s, i) => (
+          <a href={url(`/platform#${s.id}`)} class={`card group relative overflow-hidden p-7 transition-transform hover:-translate-y-0.5 ${i === 0 ? 'lg:col-span-2' : ''}`} data-reveal>
+            <div class="flex items-center gap-3">
+              <span class={`grid h-10 w-10 place-items-center rounded-2xl border border-line bg-white shadow-sm ${tones[i]}`}>
+                <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d={s.icon} /></svg>
+              </span>
+              <div>
+                <h3 class="text-[19px] font-semibold tracking-tight">{s.name}</h3>
+                <p class="text-[13px] text-ink-mute">{s.verb}</p>
+              </div>
+            </div>
+            <ul class="mt-5 flex flex-wrap gap-2">
+              {s.tools.map(([t]) => <li class="rounded-full border border-line bg-paper px-3 py-1 text-[13px] font-medium text-ink-soft">{t}</li>)}
+            </ul>
+          </a>
         ))
       }
+      <div class="card border-dashed !bg-transparent p-7 md:col-span-2" data-reveal>
+        <p class="text-[12px] font-bold uppercase tracking-wider text-ink-mute">Coming next</p>
+        <ul class="mt-4 grid gap-4 sm:grid-cols-2">
+          {COMING_NEXT.map(([t, b]) => (
+            <li>
+              <p class="text-[15px] font-semibold">{t}</p>
+              <p class="mt-0.5 text-[13.5px] leading-relaxed text-ink-mute">{b}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   </section>
 
@@ -292,7 +251,7 @@ const websiteLd = { '@context': 'https://schema.org', '@type': 'WebSite', name: 
     <div class="mx-auto max-w-2xl text-center">
       <p class="eyebrow">Compare</p>
       <h2 class="mt-4 text-[34px] font-semibold leading-tight tracking-[-0.03em] sm:text-[46px]">
-        The output of a team. <span class="serif-accent">The price of a tool.</span>
+        The output of a team. <span class="serif-accent">The price of one tool.</span>
       </h2>
     </div>
     <div class="card mt-14 overflow-x-auto">
@@ -303,7 +262,7 @@ const websiteLd = { '@context': 'https://schema.org', '@type': 'WebSite', name: 
             <th class="p-5"><span class="rounded-full bg-ink px-3 py-1.5 text-[13px] font-semibold text-white">AICMO</span></th>
             <th class="p-5 font-semibold">Agency</th>
             <th class="p-5 font-semibold">Freelancer</th>
-            <th class="p-5 font-semibold">DIY with AI tools</th>
+            <th class="p-5 font-semibold">Separate tools</th>
           </tr>
         </thead>
         <tbody class="divide-y divide-line">
@@ -332,8 +291,8 @@ const websiteLd = { '@context': 'https://schema.org', '@type': 'WebSite', name: 
     <div class="grid gap-5 md:grid-cols-3">
       {
         [
-          ['D2C & Shopify brands', 'Your catalogue, prices and product photos, turned into a steady stream of posts that sell.', '/for/d2c-brands'],
-          ['Startups & apps', 'Launch plans, build-in-public posts, tracked links to your app store listing, review replies.', '/for/startups'],
+          ['D2C & Shopify brands', 'Competitor watch, campaign and festival plans, and your catalogue turned into posts that sell.', '/for/d2c-brands'],
+          ['Startups & apps', 'Positioning, launch plans, app store reviews and listings, tracked installs and growth experiments.', '/for/startups'],
           ['Agencies', 'Run three client brands from one account, each with its own Brand Brain and approval flow.', '/for/agencies'],
         ].map(([t, b, href]) => (
           <a href={url(href)} class="card group p-8 transition-transform hover:-translate-y-0.5" data-reveal>
@@ -391,7 +350,7 @@ const websiteLd = { '@context': 'https://schema.org', '@type': 'WebSite', name: 
           Hire your AI CMO <span class="serif-accent text-brand">today.</span>
         </h2>
         <p class="mx-auto mt-5 max-w-lg text-[17px] leading-relaxed text-white/65">
-          Give it your website this afternoon. Approve your first week of posts tonight.
+          Give it your website this afternoon. Have your research, strategy and first week of content by tonight.
         </p>
         <div class="mt-9 flex justify-center">
           <EarlyAccess source="footer-cta" dark />

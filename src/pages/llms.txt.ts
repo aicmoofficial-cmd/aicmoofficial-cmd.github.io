@@ -1,6 +1,7 @@
 import type { APIContext } from 'astro';
 import { getCollection } from 'astro:content';
 import { CREDIT_COSTS, PLANS, SITE, url } from '../lib/site';
+import { COMING_NEXT, STAGES } from '../lib/platform';
 
 // A plain-text summary for AI assistants and answer engines (llmstxt.org).
 export async function GET({ site }: APIContext) {
@@ -10,9 +11,15 @@ export async function GET({ site }: APIContext) {
 
 > ${SITE.description}
 
-AICMO is an AI Chief Marketing Officer for startups, D2C/Shopify brands and agencies, built in India with prices in INR.
+AICMO is an all-in-one AI Chief Marketing Officer for startups, D2C/Shopify brands and agencies, built in India with prices in INR. It is not only a social media scheduler: it covers research, analysis, planning, creation, publishing, measurement and comparison.
 
 ## What it does
+${STAGES.map((s) => `### ${s.name}: ${s.verb}\n${s.summary}\n${s.tools.map(([t, b]) => `- ${t}: ${b}`).join('\n')}`).join('\n\n')}
+
+### Coming next (not available yet)
+${COMING_NEXT.map(([t, b]) => `- ${t}: ${b}`).join('\n')}
+
+## In short
 - Brand Brain: reads the brand's website to learn voice, audience, products, offers and competitors; imports Shopify products and prices.
 - Strategy: positioning, messaging pillars and a weekly posting cadence per channel.
 - Content: writes posts per channel, with product photo cards, AI images or uploads.
@@ -28,6 +35,7 @@ ${PLANS.map((p) => `- ${p.name}: ₹${p.price} (${p.credits} credits/month; ₹$
 
 ## Pages
 - [Home](${link('/')})
+- [Platform](${link('/platform')})
 - [Pricing](${link('/pricing')})
 - [For D2C & Shopify brands](${link('/for/d2c-brands')})
 - [For startups & apps](${link('/for/startups')})

@@ -1,12 +1,12 @@
 ---
-// Illustration of the approval flow (a fictional brand; no real metrics).
+// Illustration of the daily CMO briefing across the marketing loop (a fictional brand; no real metrics).
+const rail = ['Research', 'Analyze', 'Plan', 'Create', 'Publish', 'Measure', 'Compare'];
 ---
 
-<div class="relative mx-auto mb-16 w-full max-w-[560px] sm:mb-10" aria-hidden="true">
+<div class="relative mx-auto mb-16 w-full max-w-[580px] sm:mb-10" aria-hidden="true">
   <div class="glow left-[-10%] top-[10%] h-64 w-64 bg-violet"></div>
   <div class="glow right-[-8%] bottom-[5%] h-64 w-64 bg-sky"></div>
 
-  <!-- App window -->
   <div class="card relative overflow-hidden !rounded-[28px]">
     <div class="flex items-center justify-between border-b border-line bg-paper/70 px-5 py-3">
       <div class="flex gap-1.5">
@@ -14,69 +14,87 @@
         <span class="h-2.5 w-2.5 rounded-full bg-[#ffbd2e]"></span>
         <span class="h-2.5 w-2.5 rounded-full bg-[#28c941]"></span>
       </div>
-      <span class="hidden text-[12px] font-semibold text-ink-mute sm:inline">Approval inbox · 3 waiting</span>
+      <span class="hidden text-[12px] font-semibold text-ink-mute sm:inline">Kaya Handloom · Today's briefing</span>
       <span class="w-10"></span>
     </div>
 
-    <div class="grid gap-5 p-5 sm:grid-cols-[200px_1fr]">
-      <!-- Product photo card -->
-      <div class="overflow-hidden rounded-2xl border border-line">
-        <div class="relative aspect-[4/5] bg-[#1f2a6b]">
-          <svg viewBox="0 0 200 250" class="absolute inset-0 h-full w-full opacity-90">
-            <defs>
-              <pattern id="blockprint" width="40" height="40" patternUnits="userSpaceOnUse">
-                <circle cx="20" cy="20" r="7" fill="none" stroke="#c9d3ff" stroke-width="1.4" opacity=".55"></circle>
-                <path d="M20 6 L23 13 L20 20 L17 13Z M20 34 L23 27 L20 20 L17 27Z M6 20 L13 17 L20 20 L13 23Z M34 20 L27 17 L20 20 L27 23Z" fill="#e8ecff" opacity=".35"></path>
-                <circle cx="0" cy="0" r="2" fill="#e8ecff" opacity=".4"></circle>
-                <circle cx="40" cy="40" r="2" fill="#e8ecff" opacity=".4"></circle>
-              </pattern>
-              <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
-                <stop offset=".55" stop-color="#1f2a6b" stop-opacity="0"></stop>
-                <stop offset="1" stop-color="#0f153d" stop-opacity=".95"></stop>
-              </linearGradient>
-            </defs>
-            <rect width="200" height="250" fill="url(#blockprint)"></rect>
-            <rect width="200" height="250" fill="url(#fade)"></rect>
-          </svg>
-          <span class="absolute left-3 top-3 rounded-full bg-white/90 px-2.5 py-1 text-[10px] font-bold text-[#1f2a6b]">NEW DROP</span>
-          <div class="absolute inset-x-3 bottom-3 text-white">
-            <p class="text-[13px] font-semibold leading-tight">Indigo block-print kurta</p>
-            <p class="mt-1 text-[12px] font-medium text-white/80">₹1,499 · Kaya Handloom</p>
-          </div>
-        </div>
-      </div>
+    <div class="grid sm:grid-cols-[124px_1fr]">
+      <!-- Stage rail -->
+      <ul class="hidden border-r border-line bg-paper/40 p-3 sm:block">
+        {
+          rail.map((r, i) => (
+            <li class={`mb-1 flex items-center gap-2 rounded-xl px-2.5 py-2 text-[12px] font-semibold ${i === 3 ? 'bg-white text-ink shadow-sm' : 'text-ink-mute'}`}>
+              <span class={`h-1.5 w-1.5 rounded-full ${i === 3 ? 'bg-brand' : 'bg-line'}`} />
+              {r}
+            </li>
+          ))
+        }
+      </ul>
 
-      <!-- Post -->
-      <div class="flex min-w-0 flex-col">
-        <div class="flex items-center gap-2">
-          <span class="grid h-7 w-7 place-items-center rounded-full bg-gradient-to-br from-[#f58529] via-[#dd2a7b] to-[#8134af] text-[10px] font-bold text-white">IG</span>
-          <div class="leading-tight">
-            <p class="text-[13px] font-semibold">Instagram · Carousel</p>
-            <p class="text-[11px] text-ink-mute">Pillar: Craft stories</p>
+      <!-- Briefing feed -->
+      <div class="space-y-2.5 p-4">
+        <div class="rounded-2xl border border-line bg-white p-3">
+          <p class="text-[10px] font-bold uppercase tracking-wider text-sky">Research</p>
+          <p class="mt-1 text-[13px] font-semibold leading-snug">A competitor changed its pricing page</p>
+          <p class="text-[11.5px] text-ink-mute">New free-shipping threshold spotted overnight</p>
+        </div>
+
+        <div class="rounded-2xl border border-line bg-white p-3">
+          <p class="text-[10px] font-bold uppercase tracking-wider text-violet">Analyze</p>
+          <p class="mt-1 text-[13px] font-semibold leading-snug">Reviews keep praising the fabric, asking about sizing</p>
+          <p class="text-[11.5px] text-ink-mute">Suggested: a size-guide carousel this week</p>
+        </div>
+
+        <!-- Create: post awaiting approval -->
+        <div class="rounded-2xl border-2 border-royal/25 bg-white p-3">
+          <p class="text-[10px] font-bold uppercase tracking-wider text-royal">Create · Ready for you</p>
+          <div class="mt-2 flex gap-3">
+            <div class="relative h-[86px] w-[70px] shrink-0 overflow-hidden rounded-xl bg-[#1f2a6b]">
+              <svg viewBox="0 0 70 86" class="absolute inset-0 h-full w-full">
+                <defs>
+                  <pattern id="blockprint" width="22" height="22" patternUnits="userSpaceOnUse">
+                    <circle cx="11" cy="11" r="4" fill="none" stroke="#c9d3ff" stroke-width="1" opacity=".6"></circle>
+                    <path d="M11 3 L13 8 L11 11 L9 8Z M11 19 L13 14 L11 11 L9 14Z M3 11 L8 9 L11 11 L8 13Z M19 11 L14 9 L11 11 L14 13Z" fill="#e8ecff" opacity=".4"></path>
+                  </pattern>
+                </defs>
+                <rect width="70" height="86" fill="url(#blockprint)"></rect>
+              </svg>
+              <span class="absolute inset-x-1.5 bottom-1.5 rounded-md bg-white/90 px-1 py-0.5 text-center text-[8.5px] font-bold text-[#1f2a6b]">₹1,499</span>
+            </div>
+            <div class="min-w-0 flex-1">
+              <p class="text-[12px] font-semibold">Instagram · Carousel</p>
+              <p class="mt-0.5 line-clamp-2 text-[12px] leading-snug text-ink-soft">Every motif on this kurta was stamped by hand in Bagru. Natural indigo, soft cotton.</p>
+              <div class="mt-2 flex gap-1.5">
+                <span class="rounded-full bg-ink px-3 py-1 text-[11px] font-semibold text-white">Approve</span>
+                <span class="rounded-full bg-emerald-50 px-2 py-1 text-[10.5px] font-semibold text-emerald-700">✓ Price checked</span>
+              </div>
+            </div>
           </div>
         </div>
-        <p class="mt-3 text-[13.5px] leading-relaxed text-ink-soft">
-          Every motif on this kurta was stamped by hand in Bagru. Soft cotton, natural indigo, made for long summer days. <span class="text-royal">#handloom #slowfashion</span>
-        </p>
-        <div class="mt-3 flex flex-wrap gap-1.5">
-          <span class="rounded-full bg-emerald-50 px-2.5 py-1 text-[11px] font-semibold text-emerald-700">✓ Price matches catalogue</span>
-          <span class="rounded-full bg-indigo-50 px-2.5 py-1 text-[11px] font-semibold text-royal">On-brand</span>
-        </div>
-        <div class="mt-auto flex gap-2 pt-4">
-          <span class="flex-1 rounded-full bg-ink py-2 text-center text-[12.5px] font-semibold text-white">Approve</span>
-          <span class="flex-1 rounded-full border border-line py-2 text-center text-[12.5px] font-semibold">Edit</span>
+
+        <div class="rounded-2xl border border-line bg-white p-3">
+          <div class="flex items-end justify-between gap-3">
+            <div>
+              <p class="text-[10px] font-bold uppercase tracking-wider text-emerald-600">Measure</p>
+              <p class="mt-1 text-[13px] font-semibold leading-snug">Saves are up on craft-story posts</p>
+              <p class="text-[11.5px] text-ink-mute">Doing more of these next week</p>
+            </div>
+            <div class="flex h-10 items-end gap-1">
+              {[40, 55, 35, 70, 60, 90].map((h) => <span class="w-2 rounded-sm bg-gradient-to-t from-royal to-violet" style={`height:${h}%`} />)}
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Floating: schedule -->
+  <!-- Floating: publish -->
   <div class="card absolute -right-3 -top-5 flex items-center gap-2.5 !rounded-2xl px-3.5 py-2.5 sm:-right-8">
     <span class="grid h-8 w-8 place-items-center rounded-xl bg-brand text-white">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="3"></rect><path d="M8 3v4M16 3v4M3 10h18"></path></svg>
     </span>
     <div class="leading-tight">
-      <p class="text-[12px] font-semibold">Scheduled</p>
+      <p class="text-[12px] font-semibold">Scheduled on 3 channels</p>
       <p class="text-[11px] text-ink-mute">Fri · 7:30 PM IST</p>
     </div>
   </div>
@@ -86,7 +104,7 @@
     <p class="text-[11px] font-semibold uppercase tracking-wider text-ink-mute">You → your AI CMO</p>
     <p class="mt-1.5 text-[13px] font-medium leading-snug">“Plan next week around our summer collection.”</p>
     <p class="mt-2 flex items-center gap-1.5 text-[12px] text-emerald-700">
-      <span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span> 7 posts drafted for review
+      <span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span> Plan + 7 posts ready for review
     </p>
   </div>
 </div>

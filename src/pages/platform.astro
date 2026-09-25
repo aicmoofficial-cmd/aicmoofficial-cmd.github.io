@@ -1,0 +1,121 @@
+---
+import Base from '../layouts/Base.astro';
+import EarlyAccess from '../components/EarlyAccess.astro';
+import { COMING_NEXT, STAGES } from '../lib/platform';
+import { SITE, url } from '../lib/site';
+
+const title = 'Platform — AI marketing research, strategy, content, publishing and analytics';
+const description =
+  'Everything AICMO does in one place: market and competitor research, review analysis, marketing strategy, content creation, publishing to 9 channels, post analytics, attribution and growth experiments.';
+
+const breadcrumbLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: new URL(url('/'), Astro.site).href },
+    { '@type': 'ListItem', position: 2, name: 'Platform', item: new URL(url('/platform'), Astro.site).href },
+  ],
+};
+const productLd = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: SITE.name,
+  applicationCategory: 'BusinessApplication',
+  operatingSystem: 'Web, Android',
+  description,
+  featureList: STAGES.flatMap((s) => s.tools.map(([t]) => `${s.name}: ${t}`)),
+};
+---
+
+<Base title={title} description={description} jsonLd={[breadcrumbLd, productLd]}>
+  <section class="relative overflow-hidden">
+    <div class="pointer-events-none absolute inset-x-0 top-0 h-[420px] bg-[radial-gradient(60%_60%_at_50%_0%,rgb(155_77_255/0.10),transparent_70%)]"></div>
+    <div class="container-x relative pb-16 pt-16 text-center md:pt-24">
+      <p class="eyebrow">Platform</p>
+      <h1 class="mx-auto mt-4 max-w-3xl text-[40px] font-semibold leading-[1.05] tracking-[-0.035em] sm:text-[58px]">
+        One AI for every <span class="serif-accent text-brand">marketing job.</span>
+      </h1>
+      <p class="mx-auto mt-6 max-w-2xl text-[18px] leading-relaxed text-ink-soft">
+        AICMO covers the whole loop: research your market, analyze what customers say, plan the strategy, create the content, publish it, measure the results and compare what worked. Each stage feeds the next.
+      </p>
+      <nav class="mx-auto mt-10 flex max-w-3xl flex-wrap justify-center gap-2" aria-label="Stages">
+        {
+          STAGES.map((s, i) => (
+            <a href={`#${s.id}`} class="rounded-full border border-line bg-white px-4 py-2 text-[14px] font-semibold text-ink-soft transition-colors hover:border-[#cfcbc2] hover:text-ink">
+              <span class="mr-1.5 font-serif italic text-ink-mute">{i + 1}</span>{s.name}
+            </a>
+          ))
+        }
+      </nav>
+    </div>
+  </section>
+
+  <div class="container-x pb-24">
+    {
+      STAGES.map((s, i) => (
+        <section id={s.id} class="scroll-mt-24 border-t border-line py-16 md:py-20" data-reveal>
+          <div class="grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
+            <div class="lg:sticky lg:top-28 lg:self-start">
+              <div class="flex items-center gap-3">
+                <span class="grid h-11 w-11 place-items-center rounded-2xl bg-brand text-white">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d={s.icon} /></svg>
+                </span>
+                <span class="font-serif text-[28px] italic text-ink-mute">{String(i + 1).padStart(2, '0')}</span>
+              </div>
+              <h2 class="mt-5 text-[32px] font-semibold tracking-[-0.03em] sm:text-[40px]">
+                {s.name} <span class="serif-accent text-ink-mute">· {s.verb.toLowerCase()}</span>
+              </h2>
+              <p class="mt-4 max-w-md text-[16.5px] leading-relaxed text-ink-soft">{s.summary}</p>
+            </div>
+            <div class="grid gap-4 sm:grid-cols-2">
+              {s.tools.map(([t, b]) => (
+                <div class="card p-6">
+                  <h3 class="text-[17px] font-semibold tracking-tight">{t}</h3>
+                  <p class="mt-2 text-[14.5px] leading-relaxed text-ink-mute">{b}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      ))
+    }
+
+    <section class="border-t border-line py-16 md:py-20" data-reveal>
+      <div class="grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
+        <div>
+          <p class="eyebrow">Roadmap</p>
+          <h2 class="mt-4 text-[32px] font-semibold tracking-[-0.03em] sm:text-[40px]">Coming next</h2>
+          <p class="mt-4 max-w-md text-[16.5px] leading-relaxed text-ink-soft">
+            We only list what works today. These are being built now, and early-access members get them first.
+          </p>
+        </div>
+        <div class="grid gap-4 sm:grid-cols-2">
+          {COMING_NEXT.map(([t, b]) => (
+            <div class="card border-dashed !bg-transparent p-6">
+              <h3 class="text-[17px] font-semibold tracking-tight">{t}</h3>
+              <p class="mt-2 text-[14.5px] leading-relaxed text-ink-mute">{b}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <section id="early-access" class="container-x scroll-mt-24 pb-24 md:pb-32">
+    <div class="relative overflow-hidden rounded-[36px] bg-ink px-6 py-16 text-center text-white sm:px-12 md:py-24" data-dark>
+      <div class="glow left-[10%] top-[-30%] h-72 w-72 bg-violet"></div>
+      <div class="glow right-[5%] bottom-[-40%] h-72 w-72 bg-sky"></div>
+      <div class="relative mx-auto max-w-2xl">
+        <h2 class="text-[34px] font-semibold leading-tight tracking-[-0.03em] sm:text-[52px]">
+          Replace the stack. <span class="serif-accent text-brand">Keep the control.</span>
+        </h2>
+        <p class="mx-auto mt-5 max-w-lg text-[17px] leading-relaxed text-white/65">
+          One AI CMO for research, strategy, content, publishing and analytics. Plans from ₹999 a month.
+        </p>
+        <div class="mt-9 flex justify-center">
+          <EarlyAccess source="platform" dark />
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>
