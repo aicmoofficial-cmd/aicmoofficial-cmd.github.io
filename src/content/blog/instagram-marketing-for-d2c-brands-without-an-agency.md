@@ -78,7 +78,7 @@ The hardest part of this playbook is not knowing what to do — it is doing it e
 - **Scheduling and approval.** Batch a week of posts and approve them in one sitting.
 - **Automatic performance reading.** Pull likes, comments, saves, shares and reach per post without screenshots.
 
-[AICMO](/for/d2c-brands) does all four: it imports your Shopify products and prices, creates product photo cards, writes captions in your brand voice, checks every price and offer against your store, publishes to Instagram and Facebook on schedule, and reads back each post's performance. You approve the week's posts in a few minutes.
+[AICMO](/for/d2c-brands/) does all four: it imports your Shopify products and prices, creates product photo cards, writes captions in your brand voice, checks every price and offer against your store, publishes to Instagram and Facebook on schedule, and reads back each post's performance. You approve the week's posts in a few minutes.
 
 ## Quick checklist
 

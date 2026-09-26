@@ -24,7 +24,11 @@ export const SITE = {
 export function url(path = '/'): string {
   const base = import.meta.env.BASE_URL.replace(/\/$/, '');
   if (/^https?:|^mailto:|^#/.test(path)) return path;
-  return `${base}${path.startsWith('/') ? path : `/${path}`}` || '/';
+  // Pages are served as /page/; link there directly so visitors and crawlers skip the redirect.
+  let [p, hash = ''] = path.split('#');
+  if (!p.startsWith('/')) p = `/${p}`;
+  if (!p.endsWith('/') && !/\.[a-z0-9]+$/i.test(p)) p += '/';
+  return `${base}${p}${hash ? `#${hash}` : ''}`;
 }
 
 export const CTA = SITE.signupOpen
