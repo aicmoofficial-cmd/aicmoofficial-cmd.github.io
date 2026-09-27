@@ -6,7 +6,7 @@ export const SITE = {
   name: 'AICMO',
   title: 'AICMO — your AI Chief Marketing Officer: research, strategy, content and analytics',
   description:
-    'AICMO is an all-in-one AI marketing team for startups and D2C brands: it researches your market and competitors, analyzes reviews, plans your strategy, creates on-brand content, publishes to 9 channels and measures what works.',
+    'AICMO is an all-in-one AI marketing team for startups and D2C brands: it researches your market and competitors, analyzes reviews, plans your strategy, creates on-brand content, publishes to 13 channels plus email and measures what works.',
   /** The product (sign-up / sign-in). */
   appUrl: 'https://aicmo-delta.vercel.app',
   /** API that stores early-access requests (POST /api/waitlist). */
@@ -35,7 +35,7 @@ export const CTA = SITE.signupOpen
   ? { label: 'Start 7-day trial', href: `${SITE.appUrl}/?signup=1` }
   : { label: 'Get early access', href: '#early-access' };
 
-export const CHANNELS = ['Instagram', 'Facebook', 'LinkedIn', 'X', 'Bluesky', 'Mastodon', 'Telegram', 'Discord', 'Slack'];
+export const CHANNELS = ['Instagram', 'Facebook', 'LinkedIn', 'X', 'Threads', 'Pinterest', 'Google Business', 'Bluesky', 'Mastodon', 'Telegram', 'Discord', 'Slack', 'Your blog'];
 
 export interface Plan {
   id: string;
@@ -53,53 +53,56 @@ export const PLANS: Plan[] = [
   {
     id: 'starter',
     name: 'Starter',
-    price: 999,
-    usd: 19,
-    annual: 9990,
-    credits: 75,
-    blurb: 'For founders who want steady, on-brand posting without the blank page.',
+    price: 1499,
+    usd: 25,
+    annual: 14990,
+    credits: 100,
+    blurb: 'For founders who want steady, on-brand marketing without the blank page.',
     features: [
       '1 brand, 3 channels',
-      '75 credits a month (≈ 60 posts, or 40 posts + 10 AI images)',
-      'Unlimited product photo cards',
-      'Brand Brain, marketing strategy and content calendar',
-      'Conversation radar and website health',
+      '100 credits a month (≈ 80 posts, or 60 posts + 10 AI images)',
+      'Brand Brain, marketing strategy and 30-day content calendar',
+      'Design Studio: branded images, carousels, asset library',
+      'Email marketing (1,000 emails a month), landing pages and lead CRM',
+      'SEO audit and articles, ad campaign builder',
+      'Unified inbox, post performance and weekly reports',
       'Approve every post before it goes out',
-      'Post performance and tracked links',
     ],
   },
   {
     id: 'growth',
     name: 'Growth',
-    price: 2499,
-    usd: 49,
-    annual: 24990,
-    credits: 250,
+    price: 3999,
+    usd: 59,
+    annual: 39990,
+    credits: 300,
     popular: true,
     blurb: 'Your full-time AI marketing team: plans, writes, publishes and learns.',
     features: [
       '1 brand, every channel',
-      '250 credits a month (≈ 120 posts + 40 AI images)',
+      '300 credits a month (≈ 200 posts + 30 AI images)',
       'Full autopilot with brand-score and fact-check gates',
-      'Competitor watch and review analysis',
-      'App install attribution and review replies',
-      'Growth experiments with statistical readouts',
-      '20+ strategy documents (launch plans, ASO, pitch deck…)',
-      '2 team members',
+      'Everything in Starter, with 5,000 emails a month',
+      'Competitor watch, review analysis and tracked links',
+      'Launch playbooks, influencer outreach and affiliate program',
+      'Growth experiments, custom domains, 20+ strategy documents',
+      '3 team members',
     ],
   },
   {
     id: 'pro',
     name: 'Pro / Agency',
-    price: 5999,
-    usd: 119,
-    annual: 59990,
+    price: 9999,
+    usd: 149,
+    annual: 99990,
     credits: 900,
     blurb: 'For agencies and founders running several brands.',
     features: [
       '3 brands, every channel',
       '900 credits a month, shared across brands',
-      'Everything in Growth',
+      'Everything in Growth, with 20,000 emails a month',
+      'White-label client approval page and report PDFs',
+      'X post metrics, API keys and MCP access',
       '10 team members',
       'Priority support',
     ],
@@ -108,13 +111,14 @@ export const PLANS: Plan[] = [
 
 export const CREDIT_COSTS: [string, string][] = [
   ['Write or rewrite a post (per channel)', '1'],
+  ['Carousel, email or review / inbox reply written by AI', '1'],
+  ['Landing page written by AI', '2'],
   ['AI-generated image', '3'],
-  ['Strategy document', '3'],
-  ['Review reply draft', '1'],
+  ['SEO article, ad campaign or strategy document', '3'],
   ['Marketing strategy or re-plan', '5'],
   ['Brand Brain website read (first one free)', '5'],
-  ['Product photo cards and your own uploads', 'Free'],
-  ['Publishing, analytics, fact checks, daily review', 'Free'],
+  ['Product photo cards, Design Studio templates and your own uploads', 'Free'],
+  ['Publishing, analytics, reports, fact checks, SEO audit', 'Free'],
   ['Chat with your AI CMO (fair use)', 'Free'],
 ];
 

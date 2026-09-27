@@ -1,7 +1,7 @@
 export const FAQ = [
   {
     q: 'What exactly does AICMO do?',
-    a: "It works like a whole marketing team inside one app. Give it your website and it builds a Brand Brain (your voice, audience, products, offers and competitors). Then it runs the full loop: research (competitor website changes, conversations on Reddit, Hacker News and Mastodon, website health), analysis (review sentiment and themes, daily insights), planning (strategy, 90-day roadmap, campaigns and 20+ playbooks), creation (posts, product photo cards, AI images, review replies), publishing to 9 channels, and measurement (post engagement, tracked links, app installs, growth experiments). What it measures feeds the next plan.",
+    a: "It works like a whole marketing team inside one app. Give it your website and it builds a Brand Brain (your voice, audience, products, offers and competitors). Then it runs the full loop: research (competitor website changes, conversations on Reddit, Hacker News and Mastodon, website health), analysis (review sentiment and themes, daily insights), planning (strategy, 90-day roadmap, campaigns and 20+ playbooks), creation (posts, product photo cards, AI images, review replies), publishing to 13 channels plus email, and measurement (post engagement, tracked links, app installs, growth experiments). What it measures feeds the next plan.",
   },
   {
     q: 'Is AICMO just a social media scheduler?',
@@ -25,7 +25,7 @@ export const FAQ = [
   },
   {
     q: 'What are credits?',
-    a: 'Credits are how usage is counted. Writing a post costs 1 credit, an AI-generated image 3, a new strategy 5. Publishing, analytics, fact checks, product photo cards and chatting with your AI CMO are free. Your plan includes credits every month and you can top up 100 credits for ₹499.',
+    a: 'Credits are how usage is counted. Writing a post costs 1 credit, an AI-generated image 3, a new strategy 5. Publishing, analytics, fact checks, product photo cards and chatting with your AI CMO are free. Your plan includes credits every month and you can top up 100 credits for ₹599.',
   },
   {
     q: 'How does the 7-day trial work?',

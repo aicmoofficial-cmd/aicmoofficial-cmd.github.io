@@ -62,7 +62,7 @@ An AI CMO like [AICMO](/) is software that does the planning *and* the execution
 - **Consistency.** It does not get busy. The calendar stays full through your launch week.
 - **Context.** It works from your Brand Brain — your voice, products, prices and offers — and can refresh it any time your website changes.
 - **Speed and volume.** A week of posts for three channels is minutes of your review time, not days of someone's work.
-- **Cost.** Plans start at ₹999 a month, which is less than a single sponsored post for many brands.
+- **Cost.** Plans start at ₹1,499 a month.
 - **A built-in feedback loop.** Post performance feeds straight into the next week's plan.
 
 **Where it is the wrong tool**
@@ -82,7 +82,7 @@ An AI CMO like [AICMO](/) is software that does the planning *and* the execution
 | Checks prices and offers before posting | Automatic fact check | Depends on process | Depends on person | Depends on you |
 | Learns from post performance | Every week | Monthly report | Rarely | Rarely |
 | Your time per week | ~10–30 minutes | ~1 hour of calls and feedback | 1–2 hours of briefing | Many hours |
-| Cost | From ₹999/month | Monthly retainer | Monthly fee or per piece | Your time |
+| Cost | From ₹1,499/month | Monthly retainer | Monthly fee or per piece | Your time |
 
 ## A practical way to decide
 

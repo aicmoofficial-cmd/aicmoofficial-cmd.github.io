@@ -74,7 +74,7 @@ export const STAGES: Stage[] = [
     summary: 'Schedules and publishes across your channels, with as much or as little approval as you want.',
     icon: 'M5 12h14M12 5l7 7-7 7',
     tools: [
-      ['9 channels', 'Instagram, Facebook, LinkedIn, X, Bluesky, Mastodon, Telegram, Discord and Slack, with one-click sign-in for the big four.'],
+      ['13 channels', 'Instagram, Facebook, LinkedIn, X, Threads, Pinterest, Google Business Profile, Bluesky, Mastodon, Telegram, Discord, Slack and your WordPress, Ghost or Shopify blog, with one-click sign-in for the big networks.'],
       ['Content calendar', 'Every planned, scheduled and published post in one view.'],
       ['Approval inbox', 'Approve, edit or reject each post from your phone, with the reason it was written.'],
       ['Autopilot with guardrails', 'Suggest only, ask first, or full auto per channel. Auto-publishing needs a passing brand score and fact check, and a kill switch stops everything.'],
