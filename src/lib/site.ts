@@ -4,7 +4,7 @@
  */
 export const SITE = {
   name: 'AdMobot',
-  title: 'AdMobot — your AI CMO: research, strategy, content and analytics in one platform',
+  title: 'AdMobot — AI CMO for startups: strategy, content, analytics',
   description:
     'AdMobot is an all-in-one AI marketing team for startups and D2C brands: it researches your market and competitors, analyzes reviews, plans your strategy, creates on-brand content, publishes to 13 channels plus email and measures what works.',
   /** The product (sign-up / sign-in). */

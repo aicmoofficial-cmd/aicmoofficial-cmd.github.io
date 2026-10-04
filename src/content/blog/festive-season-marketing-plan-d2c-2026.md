@@ -1,5 +1,6 @@
 ---
 title: 'Festive season marketing plan for D2C brands: Navratri to Diwali 2026'
+seoTitle: 'D2C festive marketing plan: Navratri to Diwali 2026'
 description: 'A week-by-week festive marketing plan for Indian D2C and Shopify brands, with the 2026 dates for Navratri, Durga Puja, Dussehra, Karwa Chauth, Dhanteras, Diwali and Bhai Dooj.'
 date: 2026-10-04
 category: 'Playbooks'

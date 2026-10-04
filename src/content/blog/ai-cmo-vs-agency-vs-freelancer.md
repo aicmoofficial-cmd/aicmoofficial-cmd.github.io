@@ -1,5 +1,6 @@
 ---
 title: 'AI CMO vs marketing agency vs freelancer: what should an Indian startup choose?'
+seoTitle: 'AI CMO vs agency vs freelancer for Indian startups'
 description: 'An honest comparison of the three ways early-stage founders get marketing done — agency, freelancer or an AI CMO — with costs, trade-offs and when each one makes sense.'
 date: 2026-09-26
 category: 'Guides'

@@ -1,5 +1,6 @@
 ---
 title: 'A 30-day social media content plan for early-stage startups (with templates)'
+seoTitle: '30-day social media content plan for startups'
 description: 'A practical, week-by-week content plan for founders: content pillars, a posting cadence for LinkedIn, X and Instagram, 20 post templates, and how to measure what works.'
 date: 2026-09-24
 category: 'Playbooks'
