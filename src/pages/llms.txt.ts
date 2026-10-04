@@ -23,7 +23,7 @@ ${COMING_NEXT.map(([t, b]) => `- ${t}: ${b}`).join('\n')}
 ## Questions and answers
 ${FAQ.map((f) => `### ${f.q}\n${f.a}`).join('\n\n')}
 
-## Pricing (INR per month${SITE.gstPercent ? ', excluding GST' : ''}; 7-day trial, card or UPI Autopay)
+## Pricing (INR per month${SITE.gstPercent ? ', excluding GST' : ''}; 7-day trial after a refunded ₹1 card check; prepaid, no auto-renewal)
 ${PLANS.map((p) => `- ${p.name}: ₹${p.price} (${p.credits} credits/month; ₹${p.annual}/year)`).join('\n')}
 - Credits: ${CREDIT_COSTS.map(([a, c]) => `${a} = ${c}`).join('; ')}
 

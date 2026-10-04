@@ -41,11 +41,11 @@ export const FAQ = [
   },
   {
     q: 'How does the 7-day trial work?',
-    a: "You get the Growth plan with 50 credits for 7 days. We ask for a card or UPI Autopay mandate to start, and remind you before the trial ends. Cancel before day 8 and you won't be charged.",
+    a: "You get the Growth plan with 50 credits for 7 days. To start it we check your debit or credit card with a ₹1 payment, which is refunded straight away. Nothing renews automatically: when the trial ends, you choose a plan and pay for it, or the trial simply stops.",
   },
   {
-    q: 'Can I cancel anytime?',
-    a: 'Yes. Plans are monthly or yearly and you can cancel from your account whenever you like; your plan runs until the end of the period you paid for.',
+    q: 'Do plans renew automatically? Can I cancel?',
+    a: 'There is nothing to cancel. Plans are prepaid for a month or a year and never renew on their own: we remind you before the end, and you renew only if you want to. If you do not, your plan simply ends with the period you paid for.',
   },
   {
     q: 'Is my data safe?',

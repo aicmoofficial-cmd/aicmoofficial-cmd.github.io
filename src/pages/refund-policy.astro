@@ -3,31 +3,31 @@ import Legal from '../layouts/Legal.astro';
 import { SITE, url } from '../lib/site';
 ---
 
-<Legal title="Cancellation and refund policy" description={`How cancelling an ${SITE.name} trial or subscription works, and when you get a refund.`} updated="5 October 2026">
+<Legal title="Cancellation and refund policy" description={`How an ${SITE.name} trial and prepaid plan end, and when you get a refund.`} updated="5 October 2026">
   <p>
-    This policy covers payments to {SITE.legalName} for {SITE.name} subscriptions and credit top-ups. Payments are processed by our payment partner (Razorpay); we never see or store your full card details.
+    This policy covers payments to {SITE.legalName} for {SITE.name} subscriptions and credit top-ups. Payments are processed by our payment partner (Cashfree Payments); we never see or store your full card details.
   </p>
 
   <h2>Free trial</h2>
   <ul>
-    <li>Every plan starts with a 7-day trial. You add a card or UPI Autopay mandate to start it, and nothing is charged during the 7 days.</li>
-    <li>To set up the mandate your bank may place a small verification charge (for example ₹1–₹5). The payment partner reverses it automatically.</li>
-    <li>Cancel any time before the trial ends (Plan &amp; Billing → Cancel) and you will not be charged. Otherwise your chosen plan starts on day 8 and the first payment is taken.</li>
+    <li>Every plan starts with a 7-day trial. To start it we check your debit or credit card with a ₹1 payment.</li>
+    <li>The ₹1 is refunded automatically as soon as the check succeeds; it normally reaches your card within 5–7 business days.</li>
+    <li>Nothing is charged when the trial ends. To continue, choose a plan and pay for it in Plan &amp; Billing; otherwise the trial simply ends.</li>
   </ul>
 
-  <h2>Cancelling a subscription</h2>
+  <h2>Ending a plan</h2>
   <ul>
-    <li>You can cancel at any time in the app (Plan &amp; Billing → Cancel) or by emailing <a href={`mailto:${SITE.contactEmail}`}>{SITE.contactEmail}</a> from your account email.</li>
-    <li>Cancelling stops all future charges. Your plan stays active, with its credits, until the end of the period you already paid for. There is no cancellation fee.</li>
+    <li>Plans are prepaid for a month or a year and never renew automatically, so there is nothing to cancel: if you don't renew, your plan ends with the period you paid for. You can also email <a href={`mailto:${SITE.contactEmail}`}>{SITE.contactEmail}</a> from your account email.</li>
+    <li>Your plan stays active, with its credits, until the end of the period you already paid for. There is no fee for not renewing.</li>
   </ul>
 
   <h2>Refunds</h2>
   <ul>
     <li><b>Monthly plans:</b> a month that has started is not refunded, and there are no refunds for partly used months.</li>
-    <li><b>Annual plans:</b> if you cancel within 7 days of an annual payment, we refund it, minus the credits you used at the top-up rate. After 7 days, the plan runs to the end of the paid year.</li>
+    <li><b>Annual plans:</b> if you ask within 7 days of an annual payment, we refund it, minus the credits you used at the top-up rate. After 7 days, the plan runs to the end of the paid year.</li>
     <li><b>Credit top-ups:</b> an unused top-up pack can be refunded within 7 days of purchase. A pack that has been partly used is not refundable.</li>
     <li><b>Work already delivered:</b> credits spent on posts, images, articles and other content that was generated, and posts already published, are not refundable, as with any marketing service already performed.</li>
-    <li><b>Always refunded in full:</b> a duplicate charge, a charge made after you cancelled, or a charge for a period in which the service was unavailable to you because of a fault on our side.</li>
+    <li><b>Always refunded in full:</b> a duplicate charge, a charge you did not make yourself, or a charge for a period in which the service was unavailable to you because of a fault on our side.</li>
   </ul>
 
   <h2>How to ask for a refund</h2>
