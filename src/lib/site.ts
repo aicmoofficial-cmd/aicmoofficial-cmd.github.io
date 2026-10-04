@@ -116,6 +116,7 @@ export const CREDIT_COSTS: [string, string][] = [
   ['AI-generated image', '3'],
   ['SEO article, ad campaign or strategy document', '3'],
   ['Marketing strategy or re-plan', '5'],
+  ['Keep a link in an X post (X posts go out without links by default, because X charges for each post with a link)', '6'],
   ['Brand Brain website read (first one free)', '5'],
   ['Product photo cards, Design Studio templates and your own uploads', 'Free'],
   ['Publishing, analytics, reports, fact checks, SEO audit', 'Free'],
