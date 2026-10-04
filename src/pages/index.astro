@@ -45,15 +45,22 @@ const softwareLd = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication',
   name: SITE.name,
+  url: new URL(url('/'), Astro.site).href,
+  image: new URL(url('/og.png'), Astro.site).href,
   applicationCategory: 'BusinessApplication',
+  applicationSubCategory: 'Marketing automation',
   operatingSystem: 'Web, Android',
   description: SITE.description,
+  inLanguage: 'en-IN',
+  publisher: { '@id': new URL(url('/#organization'), Astro.site).href },
+  featureList: STAGES.flatMap((s) => s.tools.map(([t]) => t)),
   offers: PLANS.map((p) => ({
     '@type': 'Offer',
     name: p.name,
     price: p.price,
     priceCurrency: 'INR',
     category: 'subscription',
+    url: new URL(url('/pricing'), Astro.site).href,
   })),
 };
 const faqLd = {
@@ -61,7 +68,14 @@ const faqLd = {
   '@type': 'FAQPage',
   mainEntity: FAQ.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
 };
-const websiteLd = { '@context': 'https://schema.org', '@type': 'WebSite', name: SITE.name, url: new URL(url('/'), Astro.site).href };
+const websiteLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: SITE.name,
+  url: new URL(url('/'), Astro.site).href,
+  inLanguage: 'en-IN',
+  publisher: { '@id': new URL(url('/#organization'), Astro.site).href },
+};
 ---
 
 <Base jsonLd={[websiteLd, softwareLd, faqLd]}>

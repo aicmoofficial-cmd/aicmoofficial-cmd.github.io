@@ -1,5 +1,13 @@
 export const FAQ = [
   {
+    q: 'What is an AI CMO?',
+    a: "An AI CMO (AI Chief Marketing Officer) is software that does the job of a marketing lead, not just one marketing task. It learns your brand, decides what to say and where, writes and designs the content, publishes it, measures the results and changes the plan based on what worked. AICMO is an AI CMO built for startups, D2C brands and agencies in India, with prices in rupees.",
+  },
+  {
+    q: 'Who is AICMO for?',
+    a: 'Founders and small teams without a full-time marketer: D2C and Shopify brands, startups and apps, and agencies that run marketing for several clients. It suits teams that want consistent, on-brand marketing every week without hiring an agency or juggling ten tools.',
+  },
+  {
     q: 'What exactly does AICMO do?',
     a: "It works like a whole marketing team inside one app. Give it your website and it builds a Brand Brain (your voice, audience, products, offers and competitors). Then it runs the full loop: research (competitor website changes, conversations on Reddit, Hacker News and Mastodon, website health, SEO audit and keywords), analysis (review sentiment, inbox triage, a weekly review), planning (strategy, a 30-day content plan, launch playbooks and ad campaigns), creation (posts, designs and carousels, SEO articles, emails, landing pages), publishing to 13 channels plus email, and measurement (post engagement, Google Analytics, tracked links, leads, reports and growth experiments). What it measures feeds the next plan.",
   },
@@ -18,6 +26,10 @@ export const FAQ = [
   {
     q: 'Which channels can it publish to?',
     a: 'Instagram, Facebook Pages, LinkedIn, X (Twitter), Threads, Pinterest, Google Business Profile, Bluesky, Mastodon, Telegram, Discord, Slack and your WordPress, Ghost or Shopify blog, plus email to your own contacts. Instagram, Facebook, LinkedIn, X, Threads, Pinterest and Google Business Profile connect with one click through their official sign-in. YouTube, TikTok and WhatsApp posts are prepared for you to post by hand.',
+  },
+  {
+    q: 'Can it write in Hindi and other Indian languages?',
+    a: 'Yes. Posts, emails and replies can be written in English, Hinglish, Hindi, Bengali, Marathi, Telugu, Tamil, Gujarati, Kannada, Malayalam, Punjabi, Odia or Urdu, and you can set a different language per channel. It also knows the dates of Indian festivals and shopping events such as Navratri, Diwali and Holi, and plans posts ahead of them.',
   },
   {
     q: 'I sell on Shopify. Does it know my products?',

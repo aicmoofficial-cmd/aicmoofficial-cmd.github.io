@@ -22,9 +22,14 @@ const ogImage = new URL(url(image), Astro.site).href;
 const org = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
+  '@id': new URL(url('/#organization'), Astro.site).href,
   name: SITE.name,
   url: new URL(url('/'), Astro.site).href,
   logo: new URL(url('/logo-mark.png'), Astro.site).href,
+  description: SITE.description,
+  email: SITE.contactEmail,
+  areaServed: SITE.country,
+  contactPoint: { '@type': 'ContactPoint', contactType: 'customer support', email: SITE.contactEmail, availableLanguage: ['English', 'Hindi'] },
 };
 ---
 
@@ -36,12 +41,13 @@ const org = {
     <title>{fullTitle}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
-    {noindex && <meta name="robots" content="noindex" />}
+    <meta name="robots" content={noindex ? 'noindex' : 'index, follow, max-image-preview:large, max-snippet:-1'} />
     <meta name="theme-color" content="#fbfaf7" />
     <link rel="icon" type="image/png" href={url('/favicon.png')} />
     <link rel="apple-touch-icon" href={url('/apple-touch-icon.png')} />
     <link rel="sitemap" href={url('/sitemap-index.xml')} />
     <link rel="alternate" type="application/rss+xml" title={`${SITE.name} blog`} href={url('/rss.xml')} />
+    <link rel="alternate" type="text/plain" title={`${SITE.name} for AI assistants`} href={url('/llms.txt')} />
 
     <meta property="og:site_name" content={SITE.name} />
     <meta property="og:type" content={type} />

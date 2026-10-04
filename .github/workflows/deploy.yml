@@ -45,3 +45,17 @@ jobs:
     steps:
       - id: deployment
         uses: actions/deploy-pages@v4
+      # Tell Bing, Yandex and other IndexNow engines (Bing also feeds ChatGPT and Copilot search) that pages changed.
+      - name: Ping IndexNow
+        continue-on-error: true
+        env:
+          SITE: ${{ steps.deployment.outputs.page_url }}
+        run: |
+          site="${SITE%/}"
+          host="${site#https://}"
+          key=$(curl -fsSL "$site/indexnow-key.txt")
+          urls=$(curl -fsSL "$site/sitemap-0.xml" | grep -o '<loc>[^<]*' | sed 's/<loc>//' | jq -R . | jq -s .)
+          jq -n --arg host "$host" --arg key "$key" --arg loc "$site/$key.txt" --argjson urls "$urls" \
+            '{host: $host, key: $key, keyLocation: $loc, urlList: $urls}' > body.json
+          curl -sS -o /dev/null -w "IndexNow: %{http_code}\n" -X POST https://api.indexnow.org/indexnow \
+            -H 'Content-Type: application/json; charset=utf-8' --data @body.json

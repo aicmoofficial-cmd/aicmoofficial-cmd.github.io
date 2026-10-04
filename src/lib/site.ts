@@ -13,11 +13,14 @@ export const SITE = {
   apiUrl: 'https://aicmo.onrender.com',
   /** false: CTAs collect early-access requests. true: CTAs start the 7-day trial in the app. */
   signupOpen: false,
-  contactEmail: 'hello@aicmo.app', // TODO: replace with a mailbox you own before launch
+  /** Needs email forwarding on admobot.com (e.g. Cloudflare Email Routing or the registrar's forwarding). */
+  contactEmail: 'hello@admobot.com',
   legalName: 'AICMO', // TODO: registered business name for the legal pages
   country: 'India',
   /** Optional Google Analytics 4 measurement ID (G-XXXX). Empty = no analytics script. */
   ga4: '',
+  /** IndexNow key (public by design): Bing, Yandex and others re-crawl changed pages on deploy. File: public/<key>.txt */
+  indexNowKey: 'b5d71dd307cf9d82adaf7cb604ccdd10',
 };
 
 /** Prefix a site path with the base path (GitHub project pages live under /<repo>/). */

@@ -49,4 +49,4 @@ Rules: no made-up statistics, customer names or testimonials. Link to `/#early-a
 
 Pushing to `main` runs `.github/workflows/deploy.yml`, which builds and publishes to GitHub Pages (Settings → Pages → Source: GitHub Actions). The site URL and base path come from Pages automatically; for a custom domain set repository variables `SITE_URL=https://yourdomain.com` and `BASE_PATH=/`, and add the domain in Settings → Pages.
 
-After the first deploy: add the site to Google Search Console and submit `/sitemap-index.xml`.
+After the first deploy: add the site to Google Search Console and Bing Webmaster Tools and submit `/sitemap-index.xml`. Each deploy pings IndexNow (key in `SITE.indexNowKey`, file `public/<key>.txt`). For AI assistants the site serves `/llms.txt` (summary + FAQ) and `/llms-full.txt` (every post).
