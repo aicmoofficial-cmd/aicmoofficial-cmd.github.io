@@ -91,6 +91,6 @@ Do more of what is working the same week. That is the whole advantage of a small
 - [ ] Tracked links on every post
 - [ ] Replies ready for order and delivery questions
 
-## Where AICMO helps
+## Where AdMobot helps
 
-[AICMO](/for/d2c-brands/) already knows the 2026 festival dates and plans posts ahead of each one. It imports your Shopify products and prices, writes posts and carousels in English, Hinglish or eleven Indian languages, checks every price, code and date against your store before anything is published, and adds tracked links so you can see which posts bring buyers. You approve the week's posts in a few minutes. [Get early access](/#early-access).
+[AdMobot](/for/d2c-brands/) already knows the 2026 festival dates and plans posts ahead of each one. It imports your Shopify products and prices, writes posts and carousels in English, Hinglish or eleven Indian languages, checks every price, code and date against your store before anything is published, and adds tracked links so you can see which posts bring buyers. You approve the week's posts in a few minutes. [Get early access](/#early-access).

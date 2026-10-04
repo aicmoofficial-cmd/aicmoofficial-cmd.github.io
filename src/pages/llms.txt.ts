@@ -12,7 +12,7 @@ export async function GET({ site }: APIContext) {
 
 > ${SITE.description}
 
-AICMO is an all-in-one AI Chief Marketing Officer for startups, D2C/Shopify brands and agencies, built in India with prices in INR. It is not only a social media scheduler: it covers research, analysis, planning, creation, publishing, measurement and comparison.
+AdMobot is an all-in-one AI Chief Marketing Officer for startups, D2C/Shopify brands and agencies, built in India with prices in INR. It is not only a social media scheduler: it covers research, analysis, planning, creation, publishing, measurement and comparison.
 
 ## What it does
 ${STAGES.map((s) => `### ${s.name}: ${s.verb}\n${s.summary}\n${s.tools.map(([t, b]) => `- ${t}: ${b}`).join('\n')}`).join('\n\n')}

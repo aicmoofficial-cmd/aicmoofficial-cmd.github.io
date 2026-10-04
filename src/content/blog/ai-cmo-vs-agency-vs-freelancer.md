@@ -55,7 +55,7 @@ Keep these four in mind; each option below is good at some and weak at others.
 
 ## Option 3: An AI CMO
 
-An AI CMO like [AICMO](/) is software that does the planning *and* the execution: it reads your website to learn your brand, writes a strategy and content calendar, drafts posts for each channel with images, publishes them on schedule, and reads back how each post performed to shape the next plan.
+An AI CMO like [AdMobot](/) is software that does the planning *and* the execution: it reads your website to learn your brand, writes a strategy and content calendar, drafts posts for each channel with images, publishes them on schedule, and reads back how each post performed to shape the next plan.
 
 **Where an AI CMO shines**
 
@@ -96,4 +96,4 @@ The mix changes as you grow. What should not change is the basics: a clear posit
 
 ## Try it on your own brand
 
-AICMO builds your Brand Brain from your website in a few minutes, and you can see a full week of drafted posts before anything is published. [Get early access](/#early-access) and judge the output on your own brand.
+AdMobot builds your Brand Brain from your website in a few minutes, and you can see a full week of drafted posts before anything is published. [Get early access](/#early-access) and judge the output on your own brand.

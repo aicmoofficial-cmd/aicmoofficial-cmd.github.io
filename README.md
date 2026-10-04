@@ -1,6 +1,6 @@
-# AICMO website
+# AdMobot website
 
-Marketing site for AICMO (the app lives in a separate private repo). Static [Astro](https://astro.build) + Tailwind v4, deployed to GitHub Pages.
+Marketing site for AdMobot (the app lives in a separate private repo). Static [Astro](https://astro.build) + Tailwind v4, deployed to GitHub Pages.
 
 ## Develop
 

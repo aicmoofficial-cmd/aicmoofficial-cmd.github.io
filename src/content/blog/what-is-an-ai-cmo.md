@@ -73,8 +73,8 @@ It fits less well if you are a large brand with an in-house team and a complex a
 - Does it publish to the channels my customers actually use, and in **their language**?
 - Is the price clear, and what does a month of my usual volume cost?
 
-## How AICMO does it
+## How AdMobot does it
 
-[AICMO](/) is an AI CMO built for Indian startups, D2C brands and agencies. It builds a Brand Brain from your website (and your Shopify catalogue, if you have one), writes a strategy and a 30-day content plan, drafts posts with images for [13 channels plus email](/platform/), checks every price and offer against your own sources, and reads back post performance to shape the next week. It writes in English, Hinglish and eleven Indian languages and plans around Indian festivals. Plans start at ₹1,499 a month; see [pricing](/pricing/).
+[AdMobot](/) is an AI CMO built for Indian startups, D2C brands and agencies. It builds a Brand Brain from your website (and your Shopify catalogue, if you have one), writes a strategy and a 30-day content plan, drafts posts with images for [13 channels plus email](/platform/), checks every price and offer against your own sources, and reads back post performance to shape the next week. It writes in English, Hinglish and eleven Indian languages and plans around Indian festivals. Plans start at ₹1,499 a month; see [pricing](/pricing/).
 
 [Get early access](/#early-access) and judge the first week of posts on your own brand.

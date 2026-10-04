@@ -1,5 +1,5 @@
 /**
- * What AICMO does, grouped by the marketing loop. Shared by the home page, /platform and llms.txt.
+ * What AdMobot does, grouped by the marketing loop. Shared by the home page, /platform and llms.txt.
  * Only list what the app really does today; unbuilt modules go in COMING_NEXT.
  */
 export interface Stage {
@@ -128,5 +128,5 @@ export const COMING_NEXT: [string, string][] = [
   ['Video creation', 'Short videos and reels made from your brand kit and product photos.'],
   ['YouTube & TikTok uploads', 'Publishing videos directly; today these posts come to you ready to post by hand.'],
   ['WhatsApp Business broadcasts', 'Sending campaigns through the WhatsApp Business API.'],
-  ['Launch ads from AICMO', 'Connecting your ad accounts to launch and adjust campaigns directly; today you import the files AICMO builds.'],
+  ['Launch ads from AdMobot', 'Connecting your ad accounts to launch and adjust campaigns directly; today you import the files AdMobot builds.'],
 ];

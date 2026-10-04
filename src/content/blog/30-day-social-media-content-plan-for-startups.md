@@ -112,4 +112,4 @@ Each week, look at your best and worst post. Ask: which pillar, which format, wh
 
 ## Or let an AI CMO run the plan
 
-[AICMO](/) builds your pillars from your website, fills a calendar like the one above for each channel, drafts every post with an image, fact-checks prices and offers against your site, and reads back post performance to adjust the next week — you approve in a few minutes. [Get early access](/#early-access).
+[AdMobot](/) builds your pillars from your website, fills a calendar like the one above for each channel, drafts every post with an image, fact-checks prices and offers against your site, and reads back post performance to adjust the next week — you approve in a few minutes. [Get early access](/#early-access).

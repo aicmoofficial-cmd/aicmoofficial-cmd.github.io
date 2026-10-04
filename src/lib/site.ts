@@ -3,10 +3,10 @@
  * Before going public: set CONTACT_EMAIL, LEGAL_NAME and, once billing is live, SIGNUP_OPEN = true.
  */
 export const SITE = {
-  name: 'AICMO',
-  title: 'AICMO — your AI Chief Marketing Officer: research, strategy, content and analytics',
+  name: 'AdMobot',
+  title: 'AdMobot — your AI CMO: research, strategy, content and analytics in one platform',
   description:
-    'AICMO is an all-in-one AI marketing team for startups and D2C brands: it researches your market and competitors, analyzes reviews, plans your strategy, creates on-brand content, publishes to 13 channels plus email and measures what works.',
+    'AdMobot is an all-in-one AI marketing team for startups and D2C brands: it researches your market and competitors, analyzes reviews, plans your strategy, creates on-brand content, publishes to 13 channels plus email and measures what works.',
   /** The product (sign-up / sign-in). */
   appUrl: 'https://aicmo-delta.vercel.app',
   /** API that stores early-access requests (POST /api/waitlist). */
@@ -15,7 +15,7 @@ export const SITE = {
   signupOpen: false,
   /** Needs email forwarding on admobot.com (e.g. Cloudflare Email Routing or the registrar's forwarding). */
   contactEmail: 'hello@admobot.com',
-  legalName: 'AICMO', // TODO: registered business name for the legal pages
+  legalName: 'AdMobot', // TODO: registered business name for the legal pages
   country: 'India',
   /** Optional Google Analytics 4 measurement ID (G-XXXX). Empty = no analytics script. */
   ga4: '',

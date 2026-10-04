@@ -1,19 +1,19 @@
 export const FAQ = [
   {
     q: 'What is an AI CMO?',
-    a: "An AI CMO (AI Chief Marketing Officer) is software that does the job of a marketing lead, not just one marketing task. It learns your brand, decides what to say and where, writes and designs the content, publishes it, measures the results and changes the plan based on what worked. AICMO is an AI CMO built for startups, D2C brands and agencies in India, with prices in rupees.",
+    a: "An AI CMO (AI Chief Marketing Officer) is software that does the job of a marketing lead, not just one marketing task. It learns your brand, decides what to say and where, writes and designs the content, publishes it, measures the results and changes the plan based on what worked. AdMobot is an AI CMO built for startups, D2C brands and agencies in India, with prices in rupees.",
   },
   {
-    q: 'Who is AICMO for?',
+    q: 'Who is AdMobot for?',
     a: 'Founders and small teams without a full-time marketer: D2C and Shopify brands, startups and apps, and agencies that run marketing for several clients. It suits teams that want consistent, on-brand marketing every week without hiring an agency or juggling ten tools.',
   },
   {
-    q: 'What exactly does AICMO do?',
+    q: 'What exactly does AdMobot do?',
     a: "It works like a whole marketing team inside one app. Give it your website and it builds a Brand Brain (your voice, audience, products, offers and competitors). Then it runs the full loop: research (competitor website changes, conversations on Reddit, Hacker News and Mastodon, website health, SEO audit and keywords), analysis (review sentiment, inbox triage, a weekly review), planning (strategy, a 30-day content plan, launch playbooks and ad campaigns), creation (posts, designs and carousels, SEO articles, emails, landing pages), publishing to 13 channels plus email, and measurement (post engagement, Google Analytics, tracked links, leads, reports and growth experiments). What it measures feeds the next plan.",
   },
   {
-    q: 'Is AICMO just a social media scheduler?',
-    a: 'No. Publishing is one of seven stages. Schedulers post what you give them; AICMO also decides what to post and why, from research on your market, competitors and customer reviews, then measures the results and compares what worked. It replaces a research tool, a strategy doc, a design app, a scheduler, an email tool, an SEO tool, a landing-page builder, a CRM and an analytics dashboard with one AI CMO.',
+    q: 'Is AdMobot just a social media scheduler?',
+    a: 'No. Publishing is one of seven stages. Schedulers post what you give them; AdMobot also decides what to post and why, from research on your market, competitors and customer reviews, then measures the results and compares what worked. It replaces a research tool, a strategy doc, a design app, a scheduler, an email tool, an SEO tool, a landing-page builder, a CRM and an analytics dashboard with one AI CMO.',
   },
   {
     q: 'Will it post things without asking me?',
@@ -33,7 +33,7 @@ export const FAQ = [
   },
   {
     q: 'I sell on Shopify. Does it know my products?',
-    a: 'Yes. AICMO imports your products and prices from your Shopify store and refreshes them daily. Posts use your real product names and prices, and it can turn any product photo into a branded post image with the price on it.',
+    a: 'Yes. AdMobot imports your products and prices from your Shopify store and refreshes them daily. Posts use your real product names and prices, and it can turn any product photo into a branded post image with the price on it.',
   },
   {
     q: 'What are credits?',
