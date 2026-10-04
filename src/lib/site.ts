@@ -8,7 +8,7 @@ export const SITE = {
   description:
     'AdMobot is an all-in-one AI marketing team for startups and D2C brands: it researches your market and competitors, analyzes reviews, plans your strategy, creates on-brand content, publishes to 13 channels plus email and measures what works.',
   /** The product (sign-up / sign-in). */
-  appUrl: 'https://aicmo-delta.vercel.app',
+  appUrl: 'https://app.admobot.com',
   /** API that stores early-access requests (POST /api/waitlist). */
   apiUrl: 'https://aicmo.onrender.com',
   /** false: CTAs collect early-access requests. true: CTAs start the 7-day trial in the app. */
