@@ -23,7 +23,7 @@ export const SITE = {
     email: 'support@tharuntechsolutions.in',
     /** Registered business address and phone, shown on /contact. Razorpay and Cashfree expect both; empty = not shown. */
     address: ['3-4-696/1, Om Sai Colony', 'Near Progress High School', 'Hanamkonda, Telangana 506001', 'India'].join('\n'),
-    phone: '',
+    phone: '+91 97014 25215',
   },
   country: 'India',
   /** GST added to prices (percent). 0 while the business isn't GST-registered; set it (and AICMO_GST_PERCENT on the API) after registering. */
