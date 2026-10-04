@@ -1,0 +1,27 @@
+---
+import Legal from '../layouts/Legal.astro';
+import { SITE, url } from '../lib/site';
+---
+
+<Legal title="Service delivery policy" description={`How ${SITE.name} is delivered: online software, available as soon as payment is confirmed. Nothing is shipped.`} updated="4 October 2026">
+  <p>
+    {SITE.name} is online software (software as a service) provided by {SITE.legalName}. There are no physical goods, and nothing is shipped to you.
+  </p>
+
+  <h2>When you get access</h2>
+  <ul>
+    <li>Your account works as soon as you sign up and confirm your email at <a href={SITE.appUrl}>{SITE.appUrl.replace('https://', '')}</a>.</li>
+    <li>After a successful payment, your plan and credits are applied within a few minutes, usually instantly. A receipt is sent to your account email.</li>
+    <li>Credit top-ups are added to your balance as soon as the payment is confirmed.</li>
+  </ul>
+
+  <h2>If something is missing</h2>
+  <p>
+    If your plan or credits don't appear within 24 hours of a successful payment, email <a href={`mailto:${SITE.contactEmail}`}>{SITE.contactEmail}</a> with the payment ID. We will fix it, or refund the payment under our <a href={url('/refund-policy')}>cancellation and refund policy</a>.
+  </p>
+
+  <h2>Where the service is available</h2>
+  <p>
+    {SITE.name} works in any modern web browser and in our Android app. Prices are in INR; customers outside {SITE.country} can pay by international card where our payment partner supports it.
+  </p>
+</Legal>

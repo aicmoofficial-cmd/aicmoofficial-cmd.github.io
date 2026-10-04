@@ -1,0 +1,61 @@
+---
+import Base from '../layouts/Base.astro';
+import Company from '../components/Company.astro';
+import { SITE, url } from '../lib/site';
+const c = SITE.company;
+const contactLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ContactPage',
+  name: `Contact ${SITE.name}`,
+  url: new URL(url('/contact'), Astro.site).href,
+  about: { '@id': new URL(url('/#organization'), Astro.site).href },
+};
+---
+
+<Base title="Contact us" description={`Contact ${SITE.name} and ${c.name}: support, billing, partnerships and data requests.`} jsonLd={[contactLd]}>
+  <article class="container-x max-w-[820px] pb-10 pt-14 md:pt-20">
+    <p class="eyebrow">Contact</p>
+    <h1 class="mt-4 text-[38px] font-semibold tracking-[-0.03em] sm:text-[48px]">Talk to the team behind AdMobot</h1>
+    <p class="mt-5 text-[17px] leading-relaxed text-ink-soft">
+      {SITE.name} is built and managed by <a href={c.url} rel="noopener" class="text-brand underline-offset-4 hover:underline">{c.name}</a>.
+      Write to us about your account, billing, a bug, a partnership or your data. We reply within one to two business days (Monday to Saturday, 10:00–18:00 IST).
+    </p>
+
+    <dl class="mt-10 grid gap-6 sm:grid-cols-2">
+      <div class="rounded-3xl border border-line bg-paper-2/60 p-6">
+        <dt class="text-[13px] font-semibold text-ink-mute">Product support and billing</dt>
+        <dd class="mt-2 text-[17px] font-semibold"><a href={`mailto:${SITE.contactEmail}`} class="hover:text-brand">{SITE.contactEmail}</a></dd>
+      </div>
+      <div class="rounded-3xl border border-line bg-paper-2/60 p-6">
+        <dt class="text-[13px] font-semibold text-ink-mute">{c.name}</dt>
+        <dd class="mt-2 text-[17px] font-semibold"><a href={`mailto:${c.email}`} class="hover:text-brand">{c.email}</a></dd>
+        <dd class="mt-1 text-[14px]"><a href={c.url} rel="noopener" class="text-ink-mute hover:text-ink">tharuntechsolutions.in ↗</a></dd>
+      </div>
+      {
+        c.phone && (
+          <div class="rounded-3xl border border-line bg-paper-2/60 p-6">
+            <dt class="text-[13px] font-semibold text-ink-mute">Phone</dt>
+            <dd class="mt-2 text-[17px] font-semibold"><a href={`tel:${c.phone.replace(/\s/g, '')}`} class="hover:text-brand">{c.phone}</a></dd>
+          </div>
+        )
+      }
+      {
+        c.address && (
+          <div class="rounded-3xl border border-line bg-paper-2/60 p-6">
+            <dt class="text-[13px] font-semibold text-ink-mute">Registered address</dt>
+            <dd class="mt-2 whitespace-pre-line text-[15px] leading-relaxed">{c.address}</dd>
+          </div>
+        )
+      }
+    </dl>
+
+    <p class="mt-10 text-[14px] text-ink-mute">
+      Related: <a href={url('/refund-policy')} class="underline underline-offset-2">cancellation and refunds</a> ·
+      <a href={url('/delivery-policy')} class="underline underline-offset-2">service delivery</a> ·
+      <a href={url('/privacy')} class="underline underline-offset-2">privacy policy</a> ·
+      <a href={url('/terms')} class="underline underline-offset-2">terms of service</a> ·
+      <a href={url('/data-deletion')} class="underline underline-offset-2">delete your data</a>
+    </p>
+  </article>
+  <Company />
+</Base>

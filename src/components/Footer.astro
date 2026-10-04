@@ -30,9 +30,11 @@ const cols = [
   {
     title: 'Company',
     links: [
-      ['Contact', `mailto:${SITE.contactEmail}`],
+      ['Contact us', url('/contact')],
       ['Privacy policy', url('/privacy')],
       ['Terms of service', url('/terms')],
+      ['Cancellation & refunds', url('/refund-policy')],
+      ['Service delivery', url('/delivery-policy')],
       ['Data deletion', url('/data-deletion')],
     ],
   },
@@ -69,7 +71,10 @@ const year = new Date().getFullYear();
     }
   </div>
   <div class="container-x flex flex-col gap-2 border-t border-line py-6 text-[13px] text-ink-mute sm:flex-row sm:items-center sm:justify-between">
-    <span>© {year} {SITE.legalName}. All rights reserved.</span>
+    <span>
+      © {year} {SITE.legalName}. All rights reserved. AdMobot is built and managed by
+      <a href={SITE.company.url} rel="noopener" class="underline underline-offset-2 hover:text-ink">{SITE.company.name}</a>.
+    </span>
     <span>Prices in INR, exclusive of GST.</span>
   </div>
 </footer>

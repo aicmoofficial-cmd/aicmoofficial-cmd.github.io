@@ -39,6 +39,9 @@ ${posts.map((p) => `- [${p.data.title}](${link(`/blog/${p.id}`)}): ${p.data.desc
 ## Contact
 - Website: ${link('/')}
 - Email: ${SITE.contactEmail}
+- Built and managed by: ${SITE.company.name} (${SITE.company.url})
+- Contact page: ${link('/contact')}
+- Cancellation and refunds: ${link('/refund-policy')}
 - Full text of the blog for AI assistants: ${link('/llms-full.txt')}
 `;
   return new Response(body, { headers: { 'Content-Type': 'text/plain; charset=utf-8' } });

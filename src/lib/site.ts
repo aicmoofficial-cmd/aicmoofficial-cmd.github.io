@@ -15,7 +15,16 @@ export const SITE = {
   signupOpen: false,
   /** Needs email forwarding on admobot.com (e.g. Cloudflare Email Routing or the registrar's forwarding). */
   contactEmail: 'hello@admobot.com',
-  legalName: 'AdMobot', // TODO: registered business name for the legal pages
+  /** The business that owns and runs AdMobot (shown on every page; payment gateways check it). */
+  legalName: 'Tharun Tech Solutions',
+  company: {
+    name: 'Tharun Tech Solutions',
+    url: 'https://tharuntechsolutions.in',
+    email: 'support@tharuntechsolutions.in',
+    /** Registered business address and phone, shown on /contact. Razorpay and Cashfree expect both; empty = not shown. */
+    address: '',
+    phone: '',
+  },
   country: 'India',
   /** Optional Google Analytics 4 measurement ID (G-XXXX). Empty = no analytics script. */
   ga4: 'G-B64K05QE45',

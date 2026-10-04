@@ -1,9 +1,10 @@
 ---
+import Company from '../components/Company.astro';
 import Base from '../layouts/Base.astro';
 import PricingCards from '../components/PricingCards.astro';
 import Faq from '../components/Faq.astro';
 import EarlyAccess from '../components/EarlyAccess.astro';
-import { CREDIT_COSTS, PLANS, SITE } from '../lib/site';
+import { CREDIT_COSTS, PLANS, SITE, url } from '../lib/site';
 import { FAQ } from '../lib/faq';
 
 const faq = FAQ.filter((f) => /credits|trial|cancel|post things/i.test(f.q));
@@ -44,7 +45,7 @@ const ld = [
           A whole marketing team <span class="serif-accent text-brand">on one monthly plan.</span>
         </h1>
         <p class="mt-5 text-[18px] leading-relaxed text-ink-soft">
-          Start with a 7-day trial of Growth. Pay monthly or yearly by card or UPI Autopay, in rupees. Prices exclude GST.
+          Start with a 7-day trial of Growth. Pay monthly or yearly by card or UPI Autopay, in rupees. Prices exclude GST. Cancel anytime: see <a href={url('/refund-policy')} class="underline underline-offset-2">cancellations and refunds</a>.
         </p>
       </div>
       <div class="mt-16">
@@ -104,4 +105,5 @@ const ld = [
     <p class="mx-auto mt-4 max-w-md text-[17px] text-ink-soft">Join early access and we'll send your invite with a 7-day trial.</p>
     <div class="mt-8 flex justify-center"><EarlyAccess source="pricing" /></div>
   </section>
+  <Company />
 </Base>

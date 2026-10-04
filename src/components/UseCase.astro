@@ -1,4 +1,5 @@
 ---
+import Company from './Company.astro';
 import Base from '../layouts/Base.astro';
 import EarlyAccess from './EarlyAccess.astro';
 import Faq from './Faq.astro';
@@ -118,4 +119,5 @@ const ld = [
     <p class="mx-auto mt-4 max-w-md text-[17px] text-ink-soft">Plans from ₹1,499/month. 7-day trial. You approve every post.</p>
     <div class="mt-8 flex justify-center"><EarlyAccess source={`${p.source}-bottom`} /></div>
   </section>
+  <Company />
 </Base>
