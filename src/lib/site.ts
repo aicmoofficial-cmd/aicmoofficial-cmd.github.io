@@ -18,7 +18,7 @@ export const SITE = {
   legalName: 'AdMobot', // TODO: registered business name for the legal pages
   country: 'India',
   /** Optional Google Analytics 4 measurement ID (G-XXXX). Empty = no analytics script. */
-  ga4: '',
+  ga4: 'G-B64K05QE45',
   /** IndexNow key (public by design): Bing, Yandex and others re-crawl changed pages on deploy. File: public/<key>.txt */
   indexNowKey: 'b5d71dd307cf9d82adaf7cb604ccdd10',
 };
