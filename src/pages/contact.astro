@@ -44,6 +44,7 @@ const contactLd = {
           <div class="rounded-3xl border border-line bg-paper-2/60 p-6">
             <dt class="text-[13px] font-semibold text-ink-mute">Registered address</dt>
             <dd class="mt-2 whitespace-pre-line text-[15px] leading-relaxed">{c.address}</dd>
+            {SITE.udyam && <dd class="mt-3 text-[13px] text-ink-mute">MSME (Udyam) registration: {SITE.udyam}</dd>}
           </div>
         )
       }

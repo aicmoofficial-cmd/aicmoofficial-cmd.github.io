@@ -45,7 +45,7 @@ const ld = [
           A whole marketing team <span class="serif-accent text-brand">on one monthly plan.</span>
         </h1>
         <p class="mt-5 text-[18px] leading-relaxed text-ink-soft">
-          Start with a 7-day trial of Growth. Pay monthly or yearly by card or UPI Autopay, in rupees. Prices exclude GST. Cancel anytime: see <a href={url('/refund-policy')} class="underline underline-offset-2">cancellations and refunds</a>.
+          Start with a 7-day trial of Growth. Pay monthly or yearly by card or UPI Autopay, in rupees.{SITE.gstPercent ? ' Prices exclude GST.' : ''} Cancel anytime: see <a href={url('/refund-policy')} class="underline underline-offset-2">cancellations and refunds</a>.
         </p>
       </div>
       <div class="mt-16">

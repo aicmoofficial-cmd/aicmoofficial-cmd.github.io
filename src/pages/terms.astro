@@ -32,7 +32,7 @@ import { SITE, url } from '../lib/site';
   <h2>Trial, plans and payment</h2>
   <ul>
     <li>Paid plans start with a 7-day trial. A card or UPI Autopay mandate is required to start it. Unless you cancel before the trial ends, your plan starts and is charged automatically.</li>
-    <li>Plans renew monthly or yearly until cancelled. Prices are in INR and exclude GST, which is added where applicable. See <a href={url('/pricing')}>pricing</a>.</li>
+    <li>Plans renew monthly or yearly until cancelled. Prices are in INR. {SITE.gstPercent ? `GST at ${SITE.gstPercent}% is added at checkout.` : `${SITE.legalName} is not registered for GST at present, so no GST is charged; if that changes, we will tell you before it applies to your next payment.`} See <a href={url('/pricing')}>pricing</a>.</li>
     <li>Plans include monthly credits that do not roll over. Purchased top-up credits are valid for 12 months.</li>
     <li>You can cancel at any time; your plan stays active until the end of the paid period. Refunds follow our <a href={url('/refund-policy')}>cancellation and refund policy</a>.</li>
     <li>We may change prices with at least 30 days' notice before your next renewal.</li>

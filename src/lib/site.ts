@@ -22,10 +22,14 @@ export const SITE = {
     url: 'https://tharuntechsolutions.in',
     email: 'support@tharuntechsolutions.in',
     /** Registered business address and phone, shown on /contact. Razorpay and Cashfree expect both; empty = not shown. */
-    address: '',
+    address: ['3-4-696/1, Om Sai Colony', 'Near Progress High School', 'Hanamkonda, Telangana 506001', 'India'].join('\n'),
     phone: '',
   },
   country: 'India',
+  /** GST added to prices (percent). 0 while the business isn't GST-registered; set it (and AICMO_GST_PERCENT on the API) after registering. */
+  gstPercent: 0,
+  /** Udyam (MSME) registration, shown on /contact. */
+  udyam: 'UDYAM-TS-31-0060745',
   /** Optional Google Analytics 4 measurement ID (G-XXXX). Empty = no analytics script. */
   ga4: 'G-B64K05QE45',
   /** IndexNow key (public by design): Bing, Yandex and others re-crawl changed pages on deploy. File: public/<key>.txt */

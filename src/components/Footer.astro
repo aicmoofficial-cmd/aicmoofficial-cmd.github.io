@@ -75,6 +75,6 @@ const year = new Date().getFullYear();
       © {year} {SITE.legalName}. All rights reserved. AdMobot is built and managed by
       <a href={SITE.company.url} rel="noopener" class="underline underline-offset-2 hover:text-ink">{SITE.company.name}</a>.
     </span>
-    <span>Prices in INR, exclusive of GST.</span>
+    <span>{SITE.gstPercent ? 'Prices in INR, exclusive of GST.' : 'Prices in INR.'}</span>
   </div>
 </footer>

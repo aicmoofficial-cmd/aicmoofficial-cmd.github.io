@@ -336,7 +336,7 @@ const websiteLd = {
         <PricingCards />
       </div>
       <p class="mt-8 text-center text-[14px] text-ink-mute">
-        Prices exclude GST. <a href={url('/pricing')} class="font-medium text-royal underline underline-offset-4">See what credits cover →</a>
+        {SITE.gstPercent ? 'Prices exclude GST. ' : ''}<a href={url('/pricing')} class="font-medium text-royal underline underline-offset-4">See what credits cover →</a>
       </p>
     </div>
   </section>
