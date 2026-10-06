@@ -37,7 +37,7 @@ export const FAQ = [
   },
   {
     q: 'What are credits?',
-    a: 'Credits are how usage is counted. Writing a post costs 1 credit, an AI-generated image 3, a new strategy 5. Publishing, analytics, fact checks, product photo cards and chatting with your AI CMO are free. Your plan includes credits every month and you can top up 100 credits for ₹599.',
+    a: 'Credits are how usage is counted. Writing a post costs 1 credit, an AI-generated image 3, a new strategy 5. Publishing, analytics, fact checks, product photo cards and running your ads are free, and each plan includes 100 to 600 chat or voice messages with your AI CMO a month. Your plan includes credits every month and you can top up 100 credits for ₹599 or 500 for ₹2,799.',
   },
   {
     q: 'How does the 7-day trial work?',
