@@ -10,7 +10,7 @@ export const SITE = {
   /** The product (sign-up / sign-in). */
   appUrl: 'https://app.admobot.com',
   /** API that stores early-access requests (POST /api/waitlist). */
-  apiUrl: 'https://aicmo.onrender.com',
+  apiUrl: 'https://api.admobot.com',
   /** false: CTAs collect early-access requests. true: CTAs start the 7-day trial in the app. */
   signupOpen: false,
   /** Needs email forwarding on admobot.com (e.g. Cloudflare Email Routing or the registrar's forwarding). */
