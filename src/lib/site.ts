@@ -4,14 +4,14 @@
  */
 export const SITE = {
   name: 'AdMobot',
-  title: 'AdMobot — AI CMO for startups: strategy, content, analytics',
+  title: 'AdMobot — Your Marketing Autopilot is just one command away',
   description:
-    'AdMobot is an all-in-one AI marketing team for startups and D2C brands: it researches your market and competitors, analyzes reviews, plans your strategy, creates on-brand content, publishes to 13 channels plus email and measures what works.',
+    'AdMobot is your AI CMO. Give it your brand, budget and goal in one command and it researches your market, plans your marketing with projected sales, writes and designs the content, launches ads in your own Meta and Google accounts, publishes to 13 channels plus email and WhatsApp, and reports what worked. You approve before anything goes out.',
   /** The product (sign-up / sign-in). */
   appUrl: 'https://app.admobot.com',
   /** API that stores early-access requests (POST /api/waitlist). */
   apiUrl: 'https://api.admobot.com',
-  /** false: CTAs collect early-access requests. true: CTAs start the 7-day trial in the app. */
+  /** false: CTAs collect early-access requests. true: CTAs start the 3-day trial in the app. */
   signupOpen: false,
   /** Needs email forwarding on admobot.com (e.g. Cloudflare Email Routing or the registrar's forwarding). */
   contactEmail: 'hello@admobot.com',
@@ -48,7 +48,7 @@ export function url(path = '/'): string {
 }
 
 export const CTA = SITE.signupOpen
-  ? { label: 'Start 7-day trial', href: `${SITE.appUrl}/?signup=1` }
+  ? { label: 'Start 3-day trial', href: `${SITE.appUrl}/?signup=1` }
   : { label: 'Get early access', href: '#early-access' };
 
 export const CHANNELS = ['Instagram', 'Facebook', 'LinkedIn', 'X', 'Threads', 'Pinterest', 'Google Business', 'Bluesky', 'Mastodon', 'Telegram', 'Discord', 'Slack', 'Your blog'];

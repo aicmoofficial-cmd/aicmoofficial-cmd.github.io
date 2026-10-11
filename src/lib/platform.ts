@@ -49,12 +49,13 @@ export const STAGES: Stage[] = [
     summary: 'Writes your marketing strategy and the playbooks to execute it, grounded in your own brand and data.',
     icon: 'M4 6h16M4 12h10M4 18h7',
     tools: [
+      ['One-command marketing plan', 'Say “do the marketing for my brand, budget ₹50,000, I need 100 sales”, by typing or by voice. AdMobot reads your website, audits your SEO, studies competitors, splits your budget across channels and shows projected sales from assumptions you can edit. Projections are estimates, not promises. When you approve, it sets up your goals, strategy, 30-day calendar, landing page, ad campaigns, email and SEO work.'],
       ['Marketing strategy', 'Positioning, ideal customer, messaging pillars, a 90-day roadmap and a posting cadence for each channel. Edit a pillar and future drafts are re-planned.'],
       ['30-day content plan', 'A topic, hook and call to action for every slot in the next 30 days, around your goals, festivals and key dates. Each Monday you get the week to approve in one go.'],
       ['Campaign planning', '“Plan next week around our summer collection” — tell your AI CMO the goal and it fills the calendar.'],
       ['Launch playbooks', 'Product Hunt, app, fundraising, feature, rebrand, event and seasonal launches. Every step creates its post, email, landing page or ad on the right day.'],
       ['20+ ready playbooks', 'Referral programmes, pricing experiments, WhatsApp broadcasts, festival calendars, partnership pitches, press kits, pitch decks and investor updates.'],
-      ['Ad campaigns', 'Meta, Google Search and LinkedIn campaigns with audiences, keywords and ad variants, approved against your monthly budget and exported as files that import paused into your ads account.'],
+      ['Ad campaigns', 'Meta and Google Search campaigns (and LinkedIn as an export file) with audiences, keywords and ad variants, written by AI and checked against your own facts. You approve each campaign and a monthly spend cap before a rupee is spent.'],
     ],
   },
   {
@@ -64,12 +65,13 @@ export const STAGES: Stage[] = [
     summary: 'Writes and designs on-brand content for every channel, fact-checked against your own sources.',
     icon: 'M4 20l4-1 11-11-3-3L5 16l-1 4Z',
     tools: [
-      ['Posts for every channel', 'Channel-native copy for Instagram, LinkedIn, X and more, written from your Brand Brain, in English, Hindi or regional languages. Rewrite or translate any post with one instruction.'],
+      ['Posts for every channel', 'Channel-native copy for Instagram, LinkedIn, X and more, written from your Brand Brain in 48 languages, including English, Hinglish, Hindi and the major Indian languages. Rewrite or translate any post with one instruction. Text on images is drawn in the right script, and right-to-left languages are laid out right to left.'],
       ['Design Studio', 'Branded images and carousels in your colours and logo on a drag-and-drop canvas, exported at every platform size, with a library for your images and logos.'],
       ['Product photo cards', 'Your real product photos turned into branded post images with name and price. Or AI images, or your own uploads.'],
       ['Repurposing', 'Paste a blog post, changelog or announcement and get ready posts for every channel at once.'],
       ['SEO articles', '1,200 to 1,800-word articles for your keywords, fact-checked and published to your WordPress, Ghost or Shopify blog.'],
-      ['Email campaigns', 'Newsletters and a welcome series written from your Brand Brain, with sign-up forms, unsubscribe links and open and click tracking.'],
+      ['Email campaigns', 'Newsletters and a welcome series written from your Brand Brain, with sign-up forms that confirm by email (double opt-in), one-click unsubscribe and open and click tracking.'],
+      ['WhatsApp campaigns', 'Write the template and the campaign; send through the WhatsApp tool you already use (AiSensy, WATI, Interakt, the Meta WhatsApp Cloud API or any tool with an API). Only people who agreed to hear from you are messaged, and nothing is sent until you confirm.'],
       ['Landing pages', 'Pages with a sign-up form and an A/B headline test, built from your real products and reviews. Every sign-up lands in your leads.'],
       ['Review replies', 'Drafted replies to app store reviews in your voice, ready for you to send.'],
       ['Scripts & templates', 'UGC video scripts, podcast and long-form outlines, customer surveys and case-study templates.'],
@@ -87,6 +89,7 @@ export const STAGES: Stage[] = [
       ['Content calendar', 'Every planned, scheduled and published post in one view. Upload a CSV to schedule many posts at once.'],
       ['Approval inbox', 'Approve, edit or reject each post from your phone, with the reason it was written. Agencies can send clients an approval link.'],
       ['Autopilot with guardrails', 'Suggest only, ask first or full auto, per channel and per task. Blocked topics, a monthly AI spending cap, brand-score and fact-check gates, and a kill switch that stops everything.'],
+      ['Ads on autopilot', 'Connect your own Meta and Google Ads accounts and AdMobot launches the campaigns you approved, paused until the last step, then pauses weak ads, trims budgets that cost too much and stops spending when your monthly budget is used. A 9 PM report shows the day’s measured results. AdMobot never holds your ad money: Meta and Google bill your own card.'],
       ['Best time & UTM tags', 'Posts move to the hours your audience actually responds, and links to your site get UTM tags automatically.'],
       ['Event triggers', 'New products, blog posts, release notes and milestones turn into post drafts without you asking.'],
       ['Unified inbox', 'Reply to Facebook, Instagram, Bluesky and Mastodon comments and imported reviews from one place, with drafted replies and FAQ rules.'],
@@ -104,6 +107,7 @@ export const STAGES: Stage[] = [
       ['Tracked links', 'Short links with UTM tags for every campaign, with click counts by channel.'],
       ['App install attribution', 'Deep links that route to the right app store and attribute clicks, installs and opens to the post that drove them.'],
       ['Campaign dashboard', 'Clicks, installs and engagement per campaign in one place, with only measured numbers.'],
+      ['This Week', 'Every Monday a one-screen brief of everything due that week, with one tap to approve it all, and a Sunday review of what the measured numbers say.'],
       ['Reports', 'Weekly and monthly reports against the previous period, as a PDF, with your own branding for agencies.'],
       ['Lead CRM', 'Every sign-up, form and message becomes a lead with a stage, notes, email history and a score that explains itself.'],
     ],
@@ -126,7 +130,6 @@ export const STAGES: Stage[] = [
 
 export const COMING_NEXT: [string, string][] = [
   ['Video creation', 'Short videos and reels made from your brand kit and product photos.'],
-  ['YouTube & TikTok uploads', 'Publishing videos directly; today these posts come to you ready to post by hand.'],
-  ['WhatsApp Business broadcasts', 'Sending campaigns through the WhatsApp Business API.'],
-  ['Launch ads from AdMobot', 'Connecting your ad accounts to launch and adjust campaigns directly; today you import the files AdMobot builds.'],
+  ['TikTok uploads', 'Publishing TikTok videos directly; today these posts come to you ready to post by hand.'],
+  ['More ad channels', 'Launching LinkedIn, YouTube and Performance Max campaigns from AdMobot; today Meta and Google Search launch directly and LinkedIn comes as a file.'],
 ];
