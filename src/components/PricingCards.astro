@@ -21,7 +21,7 @@ const ctaHref = CTA.href.startsWith('#') ? url(`/${CTA.href}`) : CTA.href;
           href={ctaHref}
           class={`mt-6 inline-flex h-12 items-center justify-center rounded-full text-[15px] font-semibold transition-colors ${p.popular ? 'bg-white text-ink hover:bg-white/90' : 'bg-ink text-white hover:bg-[#1c1a2b]'}`}
         >
-          {SITE.signupOpen ? 'Start 7-day trial' : 'Get early access'}
+          {SITE.signupOpen ? 'Start 3-day trial' : 'Get early access'}
         </a>
         <ul class="mt-7 space-y-3 text-[14.5px]">
           {p.features.map((f) => (

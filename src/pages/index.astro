@@ -87,28 +87,64 @@ const websiteLd = {
       <div>
         <a href={url('/platform')} class="inline-flex items-center gap-2 rounded-full border border-line bg-white px-3 py-1.5 text-[13px] font-medium text-ink-soft transition-colors hover:border-[#cfcbc2]">
           <span class="rounded-full bg-brand px-2 py-0.5 text-[11px] font-bold text-white">NEW</span>
-          Research · Plan · Create · Publish · Measure
+          One command: research, plan, create, launch, report
           <span aria-hidden="true">→</span>
         </a>
         <h1 class="mt-6 text-[42px] font-semibold leading-[1.02] tracking-[-0.035em] sm:text-[58px] lg:text-[64px] xl:text-[60px] 2xl:text-[66px]">
-          <span class="sm:whitespace-nowrap">Your whole marketing</span><br />
-          <span class="sm:whitespace-nowrap">team, <span class="serif-accent text-brand pr-1">in one AI.</span></span>
+          <span class="sm:whitespace-nowrap">Your Marketing Autopilot</span><br />
+          <span class="sm:whitespace-nowrap">is just <span class="serif-accent text-brand pr-1">one command away.</span></span>
         </h1>
         <p class="mt-6 max-w-[540px] text-[18px] leading-relaxed text-ink-soft sm:text-[19px]">
-          AdMobot is your AI Chief Marketing Officer. It researches your market and competitors, analyzes what customers say, plans your strategy, creates the content, publishes it everywhere and measures what works.{' '}
-          <span class="text-ink">One AI CMO instead of an agency and ten tools.</span>
+          Tell AdMobot your brand, budget and goal in one sentence. Your AI Chief Marketing Officer researches your market, plans your marketing with projected sales, creates the content, launches ads in your own accounts, publishes everywhere and reports what worked.{' '}
+          <span class="text-ink">You approve before anything goes out.</span>
         </p>
-        <div class="mt-9" id="early-access-hero">
+        <div class="mt-7 max-w-[540px] rounded-2xl border border-line bg-white px-4 py-3 text-[14.5px] text-ink-soft shadow-sm">
+          <span class="mr-2 text-[11px] font-bold uppercase tracking-wider text-brand">Command</span>
+          “Do the marketing for my brand, budget ₹50,000, I need 100 sales.”
+        </div>
+        <div class="mt-6" id="early-access-hero">
           <EarlyAccess source="hero" />
         </div>
         <ul class="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-[13.5px] text-ink-mute">
           <li class="flex items-center gap-2"><span class="text-royal">✓</span> Plans from ₹1,999/month</li>
-          <li class="flex items-center gap-2"><span class="text-royal">✓</span> You approve what goes out</li>
+          <li class="flex items-center gap-2"><span class="text-royal">✓</span> You approve every post and every ad</li>
           <li class="flex items-center gap-2"><span class="text-royal">✓</span> No autopay: renew when you want</li>
         </ul>
       </div>
       <HeroMock />
     </div>
+  </section>
+
+  <!-- One command -->
+  <section class="container-x py-24 md:py-32" data-reveal>
+    <div class="mx-auto max-w-3xl text-center">
+      <p class="eyebrow">One command</p>
+      <h2 class="mt-4 text-[34px] font-semibold leading-tight tracking-[-0.03em] sm:text-[46px]">
+        Say it once. <span class="serif-accent">AdMobot runs it.</span>
+      </h2>
+      <p class="mt-5 text-[18px] leading-relaxed text-ink-soft">
+        Type it, or just talk. AdMobot works through the whole job and brings you one plan to approve. Projected sales come from assumptions you can edit: they are estimates, not promises.
+      </p>
+    </div>
+    <ol class="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+      {
+        [
+          ['1', 'Research', 'Reads your website, audits your SEO end to end and studies your competitors, with live progress as each step finishes.'],
+          ['2', 'One plan', 'Splits your budget across channels and shows the projected sales, with every assumption open to edit.'],
+          ['3', 'You approve', 'Nothing starts until you approve the plan. Each ad campaign and your monthly spend cap need your approval too.'],
+          ['4', 'It runs', 'Sets goals and strategy, fills a 30-day calendar, builds a landing page, launches ads in your own Meta and Google accounts, sends email and reports every evening.'],
+        ].map(([n, t, b]) => (
+          <li class="card p-7">
+            <span class="font-serif text-[34px] italic text-brand/50">{n}</span>
+            <h3 class="mt-3 text-[18px] font-semibold">{t}</h3>
+            <p class="mt-2 text-[15px] leading-relaxed text-ink-mute">{b}</p>
+          </li>
+        ))
+      }
+    </ol>
+    <p class="mt-8 text-center text-[14px] text-ink-mute">
+      AdMobot never holds your ad money: Meta and Google bill your own card, and one kill switch pauses everything.
+    </p>
   </section>
 
   <!-- Channels -->
@@ -330,7 +366,7 @@ const websiteLd = {
         <h2 class="mt-4 text-[34px] font-semibold leading-tight tracking-[-0.03em] sm:text-[46px]">
           Simple plans, <span class="serif-accent">priced for India.</span>
         </h2>
-        <p class="mt-4 text-[17px] text-ink-soft">Every plan starts with a 7-day trial. Prepaid by card, UPI or netbanking, and nothing renews on its own.</p>
+        <p class="mt-4 text-[17px] text-ink-soft">Start with a 3-day trial. Prepaid by card, UPI or netbanking in rupees, or by international card in US dollars. Nothing renews on its own.</p>
       </div>
       <div class="mt-14" data-reveal>
         <PricingCards />
