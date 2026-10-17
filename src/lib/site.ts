@@ -69,9 +69,9 @@ export const PLANS: Plan[] = [
   {
     id: 'starter',
     name: 'Starter',
-    price: 1999,
+    price: 2199,
     usd: 29,
-    annual: 19990,
+    annual: 21990,
     credits: 150,
     blurb: 'The one-command AI CMO for one brand. You approve every step.',
     features: [
@@ -109,9 +109,9 @@ export const PLANS: Plan[] = [
   {
     id: 'pro',
     name: 'Pro / Agency',
-    price: 12999,
-    usd: 169,
-    annual: 129990,
+    price: 13499,
+    usd: 179,
+    annual: 134990,
     credits: 1200,
     blurb: 'For agencies and founders running several brands on autopilot.',
     features: [
