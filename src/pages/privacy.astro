@@ -47,7 +47,7 @@ import { SITE, url } from '../lib/site';
 
   <h2>Data from Meta, Threads, LinkedIn, X and Pinterest</h2>
   <p>
-    We use data from these platforms, and from the Meta ad account you connect, only to publish the content you approve, to launch and manage the ads you approve, and to show you how they performed. We do not sell it, share it with third parties for advertising, or use it for any other purpose. You can disconnect a channel at any time in the app, which deletes its access token from our servers, and you can revoke AdMobot's access from the platform's own settings.
+    We use data from these platforms, and from the Meta ad account you connect, only to publish the content you approve, to launch and manage the ads you approve, and to show you how they performed. We do not sell it, share it with third parties for advertising, or use it for any other purpose. You can disconnect a channel at any time in the app, which deletes its access token from our servers and, where the platform offers a way to do it, revokes AdMobot's access at the platform too. You can also revoke AdMobot's access from the platform's own settings at any time.
   </p>
 
   <h2>Data from Google</h2>
@@ -58,11 +58,11 @@ import { SITE, url } from '../lib/site';
     <li><strong>Google Business Profile:</strong> your business accounts and locations, so you can pick one, and the local posts we publish there for you.</li>
     <li><strong>Google Analytics and Search Console (read-only):</strong> your analytics properties and Search Console sites, and reports on sessions, conversions, search queries, clicks and impressions, shown only to you in your Analytics screen.</li>
     <li><strong>Google Ads:</strong> the ad accounts you can access, so you can pick one, and the campaigns, budgets, ads and daily results we create, change and read after you approve them. Your own payment profile pays Google; we never hold your ad money.</li>
-    <li><strong>YouTube (only if you turn it on):</strong> uploading the videos you attach to a post you approved.</li>
+    <li><strong>YouTube (only if you turn it on):</strong> uploading the videos you attach to a post you approved. AdMobot's use of YouTube is also subject to the <a href="https://www.youtube.com/t/terms">YouTube Terms of Service</a> and the <a href="https://policies.google.com/privacy">Google Privacy Policy</a>.</li>
     <li><strong>Your Google account email</strong>, to show you which account is connected.</li>
   </ul>
   <p>
-    AdMobot's use and transfer to any other app of information received from Google APIs will adhere to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including the Limited Use requirements. We use this data only to provide and improve these user-facing features. We do not use it for advertising, do not sell it, do not transfer it to others except as needed to provide the features, to comply with law, or as part of a merger, and our people do not read it except with your consent, for security, or where the law requires. You can disconnect any Google service in AdMobot, which deletes the stored tokens, and revoke access at any time at <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>.
+    AdMobot's use and transfer to any other app of information received from Google APIs will adhere to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including the Limited Use requirements. We use this data only to provide and improve these user-facing features. We do not use it for advertising, do not sell it, do not transfer it to others except as needed to provide the features, to comply with law, or as part of a merger, and our people do not read it except with your consent, for security, or where the law requires. You can disconnect any Google service in AdMobot, which revokes the access at Google (once no other connected Google service uses the same sign-in) and deletes the stored tokens, and you can revoke access at any time at <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>.
   </p>
 
   <h2>How long we keep data</h2>
@@ -82,7 +82,7 @@ import { SITE, url } from '../lib/site';
 
   <h2>Security</h2>
   <p>
-    Data is encrypted in transit (HTTPS). Channel tokens stay on our servers and are never sent to your browser. Access to production systems is limited to the people who run the service.
+    Data is encrypted in transit (HTTPS). Channel and ad-account access tokens are encrypted on our servers, are never sent to your browser, and are deleted when you disconnect. Access to production systems is limited to the people who run the service.
   </p>
 
   <h2>Children</h2>
