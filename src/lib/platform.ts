@@ -21,10 +21,12 @@ export const STAGES: Stage[] = [
     tools: [
       ['Brand Brain', 'Reads your website, pitch deck or documents to learn your voice, audience, products, offers and competitors. Shopify stores bring their catalogue and prices.'],
       ['Competitor watch', "Tracks competitors' websites and alerts you when their pricing, offers or messaging change."],
+      ['Competitor ad watch', "Paste a competitor's ad or a screenshot of it: AdMobot reads the hook, offer, angle and call to action, says what it does well and what it misses, and writes your counter-ad from your own facts. Links to each competitor's Meta Ad Library and Google Ads Transparency pages."],
       ['Conversation radar', 'Finds what people are saying about your space on Reddit, Hacker News and Mastodon, so you post about what your market cares about.'],
       ['Website health', "Speed, SEO and accessibility scores for your site from Google PageSpeed, with the fixes that matter most."],
       ['App store listings', 'Reads your Google Play and App Store listings and reviews to understand how your app is presented and received.'],
-      ['SEO audit & keywords', 'Checks up to 30 pages of your site for SEO problems and scores them, and finds keywords from real Google search suggestions.'],
+      ['SEO audit & keywords', 'Checks up to 30 pages of your site for SEO problems and scores them, and finds keywords from real Google search suggestions. Also checks whether AI search engines can read your site, your structured data, HTTPS and security headers, and Core Web Vitals, with a fix-first plan and a PDF report.'],
+      ['App Store & Google Play ranks', 'Tracks where your apps and your competitors rank for each keyword in each country, every day, with alerts when you drop, enter the top 10 or get overtaken, and keyword ideas from competitor listings and reviews.'],
     ],
   },
   {
@@ -36,7 +38,9 @@ export const STAGES: Stage[] = [
     tools: [
       ['Review analysis', 'Sentiment and recurring themes across your app store reviews: what customers love, and what they keep asking for.'],
       ['Daily insights', 'Your AI CMO reviews what was published and how it performed, and writes up what to do more and less of.'],
-      ['App store optimization', 'Rewrites for your Google Play and App Store listings: title, description and keywords, based on your reviews and competitors.'],
+      ['App store optimization', 'A listing audit with a score and the fix for each miss, an Action Center ranked by impact, listing text written around the keywords you track, and an AI review of your icon and screenshots next to your competitors. You paste the changes; AdMobot never changes your store listing.'],
+      ['Store consoles', 'Connect App Store Connect and Google Play Console to bring in every review, reply on the store from AdMobot, and see your store funnel from store visits to downloads.'],
+      ['AI brand check', 'Asks an AI model what it knows about your brand and checks the answer against your Brand Brain, so you see what AI assistants get wrong about you.'],
       ['Brand & compliance audit', 'Checks your content against your brand guardrails and flags risky claims before they go out.'],
       ['Sunday review', 'Every week: what went out, what worked, measured numbers only, and one-tap changes to cadence and posting times.'],
       ['Inbox triage', 'Comments, mentions, reviews and messages sorted into leads, questions, complaints and praise. Legal threats, refunds and safety issues are flagged to you straight away.'],
@@ -66,6 +70,8 @@ export const STAGES: Stage[] = [
     icon: 'M4 20l4-1 11-11-3-3L5 16l-1 4Z',
     tools: [
       ['Posts for every channel', 'Channel-native copy for Instagram, LinkedIn, X and more, written from your Brand Brain in 48 languages, including English, Hinglish, Hindi and the major Indian languages. Rewrite or translate any post with one instruction. Text on images is drawn in the right script, and right-to-left languages are laid out right to left.'],
+      ['One post, many languages', 'Make copies of a post in up to five languages at once, for the same channel and time. Each copy keeps your voice, is fact-checked and goes to your approval inbox.'],
+      ['Short videos', 'Turn a post into a 15 to 25 second vertical video for Instagram Reels, Facebook and YouTube Shorts: a hook, two to four scenes over your own photos and a call to action, with captions in your language. No music yet.'],
       ['Design Studio', 'Branded images and carousels in your colours and logo on a drag-and-drop canvas, exported at every platform size, with a library for your images and logos.'],
       ['Product photo cards', 'Your real product photos turned into branded post images with name and price. Or AI images, or your own uploads.'],
       ['Repurposing', 'Paste a blog post, changelog or announcement and get ready posts for every channel at once.'],
@@ -74,6 +80,7 @@ export const STAGES: Stage[] = [
       ['WhatsApp campaigns', 'Write the template and the campaign; send through the WhatsApp tool you already use (AiSensy, WATI, Interakt, the Meta WhatsApp Cloud API or any tool with an API). Only people who agreed to hear from you are messaged, and nothing is sent until you confirm.'],
       ['Landing pages', 'Pages with a sign-up form and an A/B headline test, built from your real products and reviews. Every sign-up lands in your leads.'],
       ['Review replies', 'Drafted replies to app store reviews in your voice, ready for you to send.'],
+      ['Case studies', 'A case study from your first 30, 60 or 90 days, written only from measured results: revenue, orders, visits, reach and what was done. It becomes a draft landing page you publish when you are ready.'],
       ['Scripts & templates', 'UGC video scripts, podcast and long-form outlines, customer surveys and case-study templates.'],
       ['Fact check', 'Prices, discount codes, deadlines and names are checked against your website, notes and catalogue before anything is published.'],
     ],
@@ -90,6 +97,8 @@ export const STAGES: Stage[] = [
       ['Approval inbox', 'Approve, edit or reject each post from your phone, with the reason it was written. Agencies can send clients an approval link.'],
       ['Autopilot with guardrails', 'Suggest only, ask first or full auto, per channel and per task. Blocked topics, a monthly AI spending cap, brand-score and fact-check gates, and a kill switch that stops everything.'],
       ['Ads on autopilot', 'Connect your own Meta and Google Ads accounts and AdMobot launches the campaigns you approved, paused until the last step, then pauses weak ads, trims budgets that cost too much and stops spending when your monthly budget is used. A 9 PM report shows the day’s measured results. AdMobot never holds your ad money: Meta and Google bill your own card.'],
+      ['SEO bot', 'Turns audit findings into changes on your Shopify, Ghost or WordPress site: page titles, meta descriptions and image alt text. Approve each fix, or let it run weekly on autopilot. Every change can be undone.'],
+      ['Ad delivery check', 'Every hour AdMobot checks your Meta ad account, campaigns and ads, and tells you straight away when an ad is rejected (with Meta’s reason) or something stops delivery.'],
       ['Best time & UTM tags', 'Posts move to the hours your audience actually responds, and links to your site get UTM tags automatically.'],
       ['Event triggers', 'New products, blog posts, release notes and milestones turn into post drafts without you asking.'],
       ['Unified inbox', 'Reply to Facebook, Instagram, Bluesky and Mastodon comments and imported reviews from one place, with drafted replies and FAQ rules.'],
@@ -108,6 +117,7 @@ export const STAGES: Stage[] = [
       ['App install attribution', 'Deep links that route to the right app store and attribute clicks, installs and opens to the post that drove them.'],
       ['Campaign dashboard', 'Clicks, installs and engagement per campaign in one place, with only measured numbers.'],
       ['This Week', 'Every Monday a one-screen brief of everything due that week, with one tap to approve it all, and a Sunday review of what the measured numbers say.'],
+      ['What your money did', 'Each week: ad spend by platform next to the visits, orders and revenue it brought in, from your ad accounts, Google Analytics and Razorpay, and where to move budget next.'],
       ['Reports', 'Weekly and monthly reports against the previous period, as a PDF, with your own branding for agencies.'],
       ['Lead CRM', 'Every sign-up, form and message becomes a lead with a stage, notes, email history and a score that explains itself.'],
     ],
@@ -129,7 +139,7 @@ export const STAGES: Stage[] = [
 ];
 
 export const COMING_NEXT: [string, string][] = [
-  ['Video creation', 'Short videos and reels made from your brand kit and product photos.'],
+  ['Music and voice-over for videos', 'Background music and a spoken voice-over for the short videos; today they have captions and a silent track.'],
   ['TikTok uploads', 'Publishing TikTok videos directly; today these posts come to you ready to post by hand.'],
   ['More ad channels', 'Launching LinkedIn, YouTube and Performance Max campaigns from AdMobot; today Meta and Google Search launch directly and LinkedIn comes as a file.'],
 ];

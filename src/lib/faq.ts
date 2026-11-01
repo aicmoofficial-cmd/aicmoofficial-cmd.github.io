@@ -49,7 +49,7 @@ export const FAQ = [
   },
   {
     q: 'Can I pay from outside India?',
-    a: 'Yes. Customers outside India pay in US dollars by international card (Starter $29, Growth $69 and Pro $169 a month; a year costs ten months), or by bank transfer. Plans are prepaid and never renew on their own.',
+    a: 'Yes. Customers outside India pay in US dollars by international card (Starter $29, Growth $69 and Pro $179 a month; a year costs ten months), or by bank transfer. Plans are prepaid and never renew on their own.',
   },
   {
     q: 'Does AdMobot spend my ad money?',
