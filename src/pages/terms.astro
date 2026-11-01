@@ -3,7 +3,7 @@ import Legal from '../layouts/Legal.astro';
 import { SITE, url } from '../lib/site';
 ---
 
-<Legal title="Terms of service" description="The terms that apply when you use AdMobot." updated="5 October 2026">
+<Legal title="Terms of service" description="The terms that apply when you use AdMobot." updated="2 November 2026">
   <p>
     These terms are an agreement between you and {SITE.legalName} ("AdMobot", "we"), the business that builds and runs AdMobot, for your use of the AdMobot website and app. By creating an account you accept them. If you use AdMobot for a company, you confirm you can accept these terms for it.
   </p>
@@ -31,10 +31,10 @@ import { SITE, url } from '../lib/site';
 
   <h2>Trial, plans and payment</h2>
   <ul>
-    <li>Plans paid in rupees start with a 3-day trial; plans paid in US dollars have no trial. To start it we check a debit or credit card with a ₹1 payment, which we refund automatically. When the trial ends nothing is charged: you choose a plan and pay for it, or the trial ends.</li>
-    <li>Plans are prepaid for a month or a year and do not renew automatically; we remind you before your plan ends and you renew by paying again. Prices are in INR. {SITE.gstPercent ? `GST at ${SITE.gstPercent}% is added at checkout.` : `${SITE.legalName} is not registered for GST at present, so no GST is charged; if that changes, we will tell you before it applies to your next payment.`} See <a href={url('/pricing')}>pricing</a>.</li>
+    <li>Plans paid in rupees start with a 3-day trial; plans paid in US dollars have no trial. To start it we check a debit or credit card with a ₹1 payment, which we refund automatically. When the trial ends nothing is charged unless you turned on auto-renew: then the plan you chose is charged at the end of the trial unless you turn auto-renew off first.</li>
+    <li>Plans are paid for a month or a year. You choose how: pay each period yourself (we remind you before your plan ends and you renew by paying again), or turn on auto-renew, which charges your card or UPI Autopay mandate at the start of each period until you turn it off. Prices are in INR. {SITE.gstPercent ? `GST at ${SITE.gstPercent}% is added at checkout.` : `${SITE.legalName} is not registered for GST at present, so no GST is charged; if that changes, we will tell you before it applies to your next payment.`} See <a href={url('/pricing')}>pricing</a>.</li>
     <li>Plans include monthly credits that do not roll over. Purchased top-up credits are valid for 12 months.</li>
-    <li>There is no subscription to cancel: if you don't renew, your plan stays active until the end of the paid period and then ends. Refunds follow our <a href={url('/refund-policy')}>cancellation and refund policy</a>.</li>
+    <li>If you don't renew, or you turn auto-renew off in Plan &amp; Billing, your plan stays active until the end of the paid period and then ends. Refunds follow our <a href={url('/refund-policy')}>cancellation and refund policy</a>.</li>
     <li>We may change prices with at least 30 days' notice before your next renewal.</li>
   </ul>
 
