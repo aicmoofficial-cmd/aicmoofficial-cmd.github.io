@@ -49,7 +49,7 @@ export const FAQ = [
   },
   {
     q: 'Can I pay from outside India?',
-    a: 'Yes. Customers outside India pay in US dollars by international card (Starter $29, Growth $69 and Pro $169 a month; a year costs ten months), or by bank transfer. Plans are prepaid and never renew on their own.',
+    a: 'Yes. Customers outside India pay in US dollars by international card (Starter $29, Growth $69 and Pro $179 a month; a year costs ten months), or by bank transfer for payments of $150 or more. Dollar plans are prepaid and never renew on their own.',
   },
   {
     q: 'Does AdMobot spend my ad money?',
@@ -57,7 +57,7 @@ export const FAQ = [
   },
   {
     q: 'Do plans renew automatically? Can I cancel?',
-    a: 'There is nothing to cancel. Plans are prepaid for a month or a year and never renew on their own: we remind you before the end, and you renew only if you want to. If you do not, your plan simply ends with the period you paid for.',
+    a: 'Only if you choose to. You pick how to pay: pay each month or year yourself (we remind you before the end, and the plan simply ends if you do not renew), or turn on auto-renew with a card or UPI Autopay. Auto-renew can be turned off any time in Plan & Billing; your plan then runs to the end of the period you paid for and is not charged again.',
   },
   {
     q: 'Is my data safe?',

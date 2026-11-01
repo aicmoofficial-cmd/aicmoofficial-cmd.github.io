@@ -3,22 +3,25 @@ import Legal from '../layouts/Legal.astro';
 import { SITE, url } from '../lib/site';
 ---
 
-<Legal title="Cancellation and refund policy" description={`How an ${SITE.name} trial and prepaid plan end, and when you get a refund.`} updated="5 October 2026">
+<Legal title="Cancellation and refund policy" description={`How an ${SITE.name} trial and plan end, how to turn off auto-renew, and when you get a refund.`} updated="2 November 2026">
   <p>
-    This policy covers payments to {SITE.legalName} for {SITE.name} subscriptions and credit top-ups. Payments are processed by our payment partner (Cashfree Payments); we never see or store your full card details.
+    This policy covers payments to {SITE.legalName} for {SITE.name} subscriptions and credit top-ups. Payments are processed by our payment partners (Cashfree Payments and Razorpay); we never see or store your full card details.
   </p>
 
   <h2>Free trial</h2>
   <ul>
     <li>Plans paid in rupees start with a 3-day trial. To start it we check your debit or credit card with a ₹1 payment. Plans paid in US dollars have no trial.</li>
     <li>The ₹1 is refunded automatically as soon as the check succeeds; it normally reaches your card within 5–7 business days.</li>
-    <li>Nothing is charged when the trial ends. To continue, choose a plan and pay for it in Plan &amp; Billing; otherwise the trial simply ends.</li>
+    <li>If you pay each period yourself, nothing is charged when the trial ends. To continue, choose a plan and pay for it in Plan &amp; Billing; otherwise the trial simply ends.</li>
+    <li>If you turn on auto-renew when you start the trial, the plan you chose is charged when the trial ends (day 4) unless you turn auto-renew off before then in Plan &amp; Billing.</li>
   </ul>
 
   <h2>Ending a plan</h2>
   <ul>
-    <li>Plans are prepaid for a month or a year and never renew automatically, so there is nothing to cancel: if you don't renew, your plan ends with the period you paid for. You can also email <a href={`mailto:${SITE.contactEmail}`}>{SITE.contactEmail}</a> from your account email.</li>
-    <li>Your plan stays active, with its credits, until the end of the period you already paid for. There is no fee for not renewing.</li>
+    <li><b>Paying each period:</b> a plan is prepaid for a month or a year and never renews by itself, so there is nothing to cancel: if you don't renew, your plan ends with the period you paid for.</li>
+    <li><b>Auto-renew:</b> if you turned it on (card or UPI Autopay through Razorpay), turn it off any time in Plan &amp; Billing. No further payment is taken, and your plan runs to the end of the period already paid for.</li>
+    <li>You can also email <a href={`mailto:${SITE.contactEmail}`}>{SITE.contactEmail}</a> from your account email to stop renewal.</li>
+    <li>Your plan stays active, with its credits, until the end of the period you already paid for. There is no fee for not renewing or for turning auto-renew off.</li>
   </ul>
 
   <h2>Refunds</h2>
